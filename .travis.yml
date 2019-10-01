@@ -1,0 +1,15 @@
+language: node_js
+node_js: "stable"
+
+addons:
+  chrome:  stable
+  firefox: latest
+  apt:
+    packages:
+      - dbus
+
+before_install:
+  - export $(dbus-launch)
+
+notifications:
+  email: false

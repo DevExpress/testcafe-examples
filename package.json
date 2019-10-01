@@ -12,6 +12,6 @@
     "testcafe": "^1.5.0"
   },
   "scripts": {
-    "test": "testcafe chrome examples"
+    "test": "testcafe chrome,firefox examples"
   }
 }
