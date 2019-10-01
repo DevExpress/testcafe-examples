@@ -3,7 +3,7 @@ import { Selector } from 'testcafe';
 fixture `Fixture`
     .page('https://devexpress.github.io/testcafe/example/');
 
-test('How to inspect an element markup', async t => {
+test('Check an element\'s markup', async t => {
     const selector = Selector('label[for]').addCustomDOMProperties({
         outerHTML: el => el.outerHTML
     });
