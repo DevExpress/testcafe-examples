@@ -1,7 +1,9 @@
-if: NOT (commit_message =~ /^\[docs\]/) OR (type = push AND branch = master) OR (type = pull_request AND NOT branch = master)
+if: NOT (commit_message =~ /^\[docs\]/) OR (branch = master) OR (type != push)
 
 language: node_js
 node_js: "stable"
+services:
+  - xvfb
 
 addons:
   chrome:  stable
