@@ -1,6 +1,6 @@
 import { Selector } from 'testcafe';
 
-fixture `Fixture`
+fixture `Page manipulation`
     .page('https://devexpress.github.io/testcafe/example/');
 
 test('Reload the tested page', async t => {

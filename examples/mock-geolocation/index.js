@@ -2,7 +2,7 @@ import { Selector } from 'testcafe';
 
 const mockGeolocationScript = `navigator.geolocation.getCurrentPosition = success =>  success({ coords: { latitude: 30, longitude: -105, }, timestamp: Date.now() });`;
 
-fixture.only `Mock geolocation`
+fixture `Mock geolocation`
     .page('./index.html')
     .clientScripts({ content: mockGeolocationScript });
 

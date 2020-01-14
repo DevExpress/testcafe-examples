@@ -7,6 +7,6 @@ const getStyleWidthInPercents = ClientFunction(() => {
     return document.querySelector('.progress').style.width;
 });
 
-test('progress', async t => {
+test('Element width', async t => {
     await t.expect(getStyleWidthInPercents()).eql('100%', { timeout: 30000 })
 });
