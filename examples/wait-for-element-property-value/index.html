@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .bar {
+            width: 500px;
+            height: 50px;
+            border: 1px solid black;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<div class="bar">
+    <div class="progress" style="width: 0;"></div>
+</div>
+
+<script>
+    setInterval(function () {
+        var progress = document.querySelector('.progress');
+
+        progress.style.width = Math.min(100, parseInt(progress.style.width) + 1) + '%';
+    }, 50);
+</script>
+</body>
+</html>
