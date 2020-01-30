@@ -1,6 +1,6 @@
 import XPathSelector from './xpath-selector';
 
-fixture `fixture`
+fixture `Use XPath selectors`
     .page('https://devexpress.github.io/testcafe/example/');
 
 test('Click checkboxes', async t => {
