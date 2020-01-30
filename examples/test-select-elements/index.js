@@ -1,4 +1,4 @@
-import { Selector } from 'testcafe';
+import { Selector } from '../use-xpath-selectors/node_modules/testcafe';
 
 fixture `Select element manipulation`
     .page `./index.html`;

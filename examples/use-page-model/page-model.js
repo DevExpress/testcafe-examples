@@ -1,4 +1,4 @@
-import { Selector, t } from 'testcafe';
+import { Selector, t } from '../use-xpath-selectors/node_modules/testcafe';
 
 const label = Selector('label');
 

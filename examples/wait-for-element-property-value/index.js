@@ -1,4 +1,4 @@
-import { ClientFunction } from 'testcafe';
+import { ClientFunction } from '../use-xpath-selectors/node_modules/testcafe';
 
 fixture `Wait for an element property value`
     .page `./index.html`;

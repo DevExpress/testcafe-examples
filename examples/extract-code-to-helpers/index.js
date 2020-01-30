@@ -1,5 +1,5 @@
 import { Selector } from 'testcafe';
-import { enterName, typeComment, submitForm } from './helper.js';
+import { enterName, typeComment, submitForm } from './helper.js.js';
 
 fixture `Helpers`
     .page `https://devexpress.github.io/testcafe/example/`;
