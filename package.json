@@ -9,6 +9,7 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "4.17.15",
+    "nanoid": "^2.1.9",
     "testcafe": "^1.5.0"
   },
   "scripts": {

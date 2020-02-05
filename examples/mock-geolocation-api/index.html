@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="checkGeolocation">Check geolocation</button>
+    <div>
+        <span>Latitude:</span><span id="latitudeValue"></span>
+    </div>
+    <div>
+        <span>Longitude</span><span id="longitudeValue"></span>
+    </div>
+    <script>
+        var checkGeolocationBtn = document.getElementById('checkGeolocation');
+
+        checkGeolocationBtn.addEventListener('click', function () {
+            function success(position) {
+                var latitudeElement  = document.getElementById('latitudeValue');
+                var longitudeElement = document.getElementById('longitudeValue');
+
+                latitudeElement.textContent  = position.coords.latitude;
+                longitudeElement.textContent = position.coords.longitude;
+            }
+
+            navigator.geolocation.getCurrentPosition(success);
+        });
+    </script>
+</body>
+</html>

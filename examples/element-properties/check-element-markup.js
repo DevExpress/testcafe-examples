@@ -1,6 +1,6 @@
 import { Selector } from 'testcafe';
 
-fixture `Fixture`
+fixture `Element properties`
     .page('https://devexpress.github.io/testcafe/example/');
 
 test('Check an element\'s markup', async t => {
