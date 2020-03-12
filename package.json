@@ -13,6 +13,9 @@
     "testcafe": "^1.5.0"
   },
   "scripts": {
-    "test": "testcafe chrome,firefox examples"
+    "test": "testcafe chrome,firefox examples -a \"node server/index.js\""
+  },
+  "devDependencies": {
+    "mockdate": "^2.0.5"
   }
 }
