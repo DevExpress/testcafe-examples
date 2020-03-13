@@ -2,7 +2,7 @@
 
 **Test Code**: [test.js](test.js)
 
-This example shows how to set a test to wait for the file download.
+This example shows how to specify that a test should to wait for the file to download.
 
 Before the test begins, it obtains the `downloadedFilePath`. If the file already exists on the path, the test removes the file to save the download without warnings or errors.
 
