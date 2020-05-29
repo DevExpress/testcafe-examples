@@ -1,4 +1,4 @@
-# How To Mock Date
+# Mock Date
 
 **Test Code**: [index.js](index.js)
 
