@@ -1,7 +1,7 @@
 import { Selector } from 'testcafe';
 
 const getElementsByXPath = Selector(xpath => {
-    const iterator = document.evaluate(xpath, document, null, XPathResult.UNORDERED_NODE_ITERATOR_TYPE, null)
+    const iterator = document.evaluate(xpath, document, null, XPathResult.UNORDERED_NODE_ITERATOR_TYPE, null);
     const items = [];
 
     let item = iterator.iterateNext();
