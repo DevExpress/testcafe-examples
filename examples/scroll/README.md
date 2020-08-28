@@ -2,7 +2,7 @@
 
 **Test Code**: [index.js](index.js)  
 
-This example shows how to use [ClientFunctions](https://devexpress.github.io/testcafe/documentation/guides/basic-guides/obtain-client-side-info.html) and [actions](https://devexpress.github.io/testcafe/documentation/guides/basic-guides/interact-with-the-page.html) to simulate page scroll in TestCafe tests.
+TestCafe [actions](https://devexpress.github.io/testcafe/documentation/guides/basic-guides/interact-with-the-page.html) have a built-in scrolling mechanism. In rare cases you might need to scroll the page manually. This example features two common ways to do this: a `hover` action and a [ClientFunction](https://devexpress.github.io/testcafe/documentation/guides/basic-guides/obtain-client-side-info.html)
 
 The test page has 2 buttons. They are located 2000 px and 4000 px to the right respectively, both outside of viewport.
 
