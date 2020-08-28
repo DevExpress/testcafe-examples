@@ -16,7 +16,7 @@ test('take a photo', async t => {
 
 test('check an audio element source', async t => {
     const audioFrame = Selector('audio').addCustomDOMProperties({
-        //this property is true element has source, otherwise false
+        //this property is true if element has a source, otherwise false
         hasSource: el => !!el.srcObject
     });
 
