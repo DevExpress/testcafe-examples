@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Display Webcam Stream</title>
+    <style type="text/css">
+        #video, #photo {
+            display: block;
+            min-height: 100px;
+            margin: 0 auto;
+            background: #333;
+            width: 320px;
+            height: 240px;
+        }
+
+        #audio {
+            display: block;
+            min-height: 100px;
+            margin: 0 auto;
+        }
+
+        #photoButton {
+            display: block;
+            margin: 10px auto 10px auto;
+        }
+
+        #canvas {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay id='video'></video>
+    <button id='photoButton'>Take photo</button>
+    <canvas id='canvas'></canvas>
+    <img id="photo" alt="The photo will appear in this box.">
+    <audio id="audio" controls>qwe</audio>
+    <script>
+        //get elements
+        const video  = document.getElementById("video");
+        const button = document.getElementById("photoButton");
+        const canvas = document.getElementById("canvas");
+        const photo  = document.getElementById("photo");
+        const audio  = document.getElementById("audio");
+
+        // set dimensions and initialize video stream
+        const width  = 320;
+        const height = 240;
+
+        video.setAttribute('width', width);
+        video.setAttribute('height', height);
+        canvas.setAttribute('width', width);
+        canvas.setAttribute('height', height);
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+            })
+            .catch(err => console.log("Error during video stream capture: " + err));
+
+        //add photo button event listener
+        //photo is only taken if there is video feed
+        button.addEventListener('click', e => {
+            if (video.srcObject && video.srcObject.active) {
+                takePicture();
+                e.preventDefault();
+            } else
+                console.log("No input stream detected.")
+        })
+
+        //draw photo to canvas and then to the `img`
+        function takePicture() {
+            canvas.getContext('2d').drawImage(video, 0, 0, width, height);
+            photo.setAttribute('src', canvas.toDataURL('image/png'));
+        }
+
+        // request audio permission and assign to <audio> element
+        navigator.mediaDevices.getUserMedia({ audio: true })
+            .then(stream => {
+                audio.srcObject = stream;
+            })
+            .catch(err => console.log("Error during audio stream capture: " + err))
+    </script>
+</body>
+</html>
