@@ -1,6 +1,6 @@
 # Mock Camera/Microphone Access
 
-This example shows how to set up access to microphone and camera API. This example runs in **Chrome**.
+This example shows how to mock data for microphone and camera. This example runs in **Chrome**.
 
 **Test Code**: [mock-camera-microphone-access.js](mock-camera-microphone-access.js)
 
