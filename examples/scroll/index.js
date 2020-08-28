@@ -23,11 +23,11 @@ const scrollBy = ClientFunction((x, y) => {
     window.scrollBy(x, y);
 });
 
-test('scroll with an action', async t => {
+test('Scroll with an action', async t => {
     await t.hover(btn1);
 });
 
-test('scroll with a ClientFunction', async t => {
+test('Scroll with a ClientFunction', async t => {
     await scrollToElement(btn2, 250, 0);
     await scrollBy(2000, 0);
 });
