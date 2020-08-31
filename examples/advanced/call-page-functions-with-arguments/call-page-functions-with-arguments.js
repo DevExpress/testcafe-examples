@@ -1,12 +1,10 @@
 import { ClientFunction } from 'testcafe';
 
-// testcafe "chrome --autoplay-policy=no-user-gesture-required" examples/call-page-functions-with-arguments/call-page-functions-with-arguments.js
-
-fixture `Portal Experience playback`
+fixture `YouTube Playback`
     .page `https://www.youtube.com/watch?v=I6WuCe1My9w`
     .meta({ autoplay: true });
 
-test('Testing YouTube', async t => {
+test('YouTube Playback', async t => {
     const play        = ClientFunction(() => document.querySelector('.video-stream').play());
     const pause       = ClientFunction(() => document.querySelector('.video-stream').pause());
     const currentTime = ClientFunction(() => document.querySelector('.video-stream').currentTime);
