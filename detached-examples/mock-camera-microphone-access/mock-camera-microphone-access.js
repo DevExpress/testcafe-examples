@@ -2,6 +2,7 @@ import { Selector } from 'testcafe';
 
 fixture`Mock microphone/camera access`
     .page('./index.html')
+    .meta({ mockMedia: true });
 
 test('take a photo', async t => {
     const photoButton = Selector('#photoButton')
