@@ -6,7 +6,7 @@ const blurWindow = ClientFunction(() => {
     return window.dispatchEvent(blur);
 })
 
-fixture `Blur "window"`
+fixture `The web page in the background`
     .page `./index.html`;
 
 test('dispatch the "blur" event', async t => {

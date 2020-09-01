@@ -1,5 +1,5 @@
-# Blur `window`
+# Web page going to the background
 
 **Test Code**: [index.js](index.js)
 
-This example shows how to emulate the `blur` event at `window` using `EventTarget.dispatchEvent` and `ClientFunction`.
+This example shows how to simulate the web page going to the background using `EventTarget.dispatchEvent` and `ClientFunction`.
