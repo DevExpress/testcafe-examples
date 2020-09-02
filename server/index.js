@@ -13,52 +13,7 @@ http
             res.setHeader('content-disposition', 'attachment; filename=text-file.txt');
             fileStream.pipe(res);
         }
-
-        else if (req.url == '/download-random-file') {
-            let fileName = generateFileName();
-            let fileContents = generateFileContents();
-            let filePath = `./data/${generateFileName()}`;
-
-            fs.writeFileSync(`./data/${fileName}`, fileContents, (err) => {
-                if (err) {
-                    console.log(err);
-                    return;
-                }
-            });
-            res.setHeader('content-disposition', `attachment; filename=${fileName}`);
-
-            let readStream = fs.createReadStream(`${filePath}`);
-
-            readStream.on('open', () => readStream.pipe(res));
-            readStream.on('error', (err) => {
-                console.log("Error while creating read stream.");
-                res.end(err)});   
-
-            fs.unlink(`${filePath}`, (err) => {
-                if (err) {
-                    console.log(err);
-                    return;
-                }
-            });
-        }
-
         else
             res.end();
     })
     .listen(SERVER_PORT);
-
-
-function generateFileName() {
-    const now = new Date();
-    //file_hh-mm-ss.txt 
-    return `file_${now.getHours()}-${now.getMinutes()}-${now.getSeconds()}.txt`;
-};
-
-function generateFileContents() {
-    let contents = 0, n=0;
-    while (n < 100) {
-        contents += Math.random().toString(36).substring(2);
-        n++;
-    };
-    return contents;
-};
