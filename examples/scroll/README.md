@@ -4,7 +4,7 @@
 
 TestCafe [actions](https://devexpress.github.io/testcafe/documentation/guides/basic-guides/interact-with-the-page.html) have a built-in scrolling mechanism. In rare cases you might need to scroll the page manually. This example demonstrates two common ways to do this: a `hover` action and a [ClientFunction](https://devexpress.github.io/testcafe/documentation/guides/basic-guides/obtain-client-side-info.html)
 
-The test page has 2 buttons. They are located 2000 px and 4000 px to the right respectively, both outside of viewport.
+The test page has 2 buttons. They are located at 2000 px and 4000 px along the X-axis, respectively (both outside of the viewport).
 
 The `index.js` file includes 2 tests.
 
@@ -12,11 +12,11 @@ The first test scrolls the page with a [hover action](https://devexpress.github.
 
 The second test introduces 2 custom Client Functions that scroll the page:
 
-1. The `scrollToElement(selector, offsetX, offsetY)` function scrolls the page so that the element is inside the viewport.
+1. The `scrollToElement(selector, offsetX, offsetY)` function scrolls the element into the viewport.
 
     | Parameter  | Description |
     |------------|-------------|
-    | `selector` | a selector that identifies page element to scroll to |
+    | `selector` | a selector that identifies the page element |
     | `offsetX`  | the offset on the X-axis in px |
     | `offsetY`  | the offset on the Y-axis in px |
 
@@ -24,5 +24,5 @@ The second test introduces 2 custom Client Functions that scroll the page:
 
     | Parameter  | Description |
     |------------|-------------|
-    | `x` | the horizontal pixel value to scroll by |
-    | `y`  | the vertical pixel value to scroll by |
+    | `x` | the number of pixels by which the page is scrolled horizontally|
+    | `y`  | the number of pixels by which the page is scrolled vertically.|
