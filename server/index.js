@@ -15,10 +15,11 @@ http
         }
 
         else if (req.url == '/download-random-file') {
-            let fileName = generateFile();
-            let filePath = `./data/${generateFile()}`;
+            let fileName = generateFileName();
+            let fileContents = generateFileContents();
+            let filePath = `./data/${generateFileName()}`;
 
-            fs.writeFileSync(`./data/${fileName}`, "This is a randomly generated file", (err) => {
+            fs.writeFileSync(`./data/${fileName}`, fileContents, (err) => {
                 if (err) {
                     console.log(err);
                     return;
@@ -47,9 +48,17 @@ http
     .listen(SERVER_PORT);
 
 
-function generateFile() {
+function generateFileName() {
     const now = new Date();
     //file_hh-mm-ss.txt 
-    const filename = `file_${now.getHours()}-${now.getMinutes()}-${now.getSeconds()}.txt`;
-    return filename;
-}
+    return `file_${now.getHours()}-${now.getMinutes()}-${now.getSeconds()}.txt`;
+};
+
+function generateFileContents() {
+    let contents, n=0;
+    do {contents += Math.random().toString(36).substring(2);
+        n++;
+    }
+    while (n < 100);
+    return contents;
+};

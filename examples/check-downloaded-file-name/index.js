@@ -3,14 +3,14 @@ import { RequestLogger } from 'testcafe';
 const url = 'http://localhost:3000/download-random-file';
 
 const logger = RequestLogger({ url, method: 'GET' }, {
-    logResponseHeaders: true
+    logResponseHeaders: true,
 });
 
-fixture `Download file with dynamic name`
+fixture `Download file with dynamic name and content`
     .page('./index.html')
     .requestHooks(logger);
 
-test('Download file with dynamic filename', async t => {
+test('Check file name and contents', async t => {
 
     await t
         .click('#generate-btn')
