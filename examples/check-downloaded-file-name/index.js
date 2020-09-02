@@ -10,7 +10,7 @@ fixture `Download file with dynamic name and content`
     .page('./index.html')
     .requestHooks(logger);
 
-test('Check file name and contents', async t => {
+test('Check file name', async t => {
 
     await t
         .click('#generate-btn')
