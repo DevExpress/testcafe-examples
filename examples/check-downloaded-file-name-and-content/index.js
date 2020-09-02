@@ -13,10 +13,14 @@ fixture `Download file`
     .requestHooks(logger);
 
 test('Check file name', async t => {
-
+    const fileNameRegEx = /attachment; filename=.*.txt/
+    
     await t
-        .click('#generate-btn')
-        .expect(logger.contains(r.response.statusCode === 200)).ok();
+        .click('#download-btn')
+        .expect(logger.contains( r => r.response.statusCode === 200 && 
+                                fileNameRegEx.test(logger.requests[0].response.headers['content-disposition']) 
+                                && logger.requests[0].response.body === 'Test content'
+        )).ok();
 
     console.log(logger.requests[0].response.headers['content-disposition']);
     console.log(logger.requests[0].response.body);
