@@ -55,10 +55,10 @@ function generateFileName() {
 };
 
 function generateFileContents() {
-    let contents, n=0;
-    do {contents += Math.random().toString(36).substring(2);
+    let contents = 0, n=0;
+    while (n < 100) {
+        contents += Math.random().toString(36).substring(2);
         n++;
-    }
-    while (n < 100);
+    };
     return contents;
 };
