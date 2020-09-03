@@ -2,7 +2,7 @@
 
 When a JavaScript error occurs on a tested web page, TestCafe stops test execution and posts an error message to the console. Third-party code execution (e.g. controls, logging and analytics services) might cause unexpected errors that are not relevant to the tested app. You might want to filter those errors out to ignore them during the test.
 
-This example demonstrates how to expand on TestCafe's standard error logging and filter client-side errors that happen during a test.
+This example demonstrates how to extend TestCafe's standard error logging and filter client-side errors that happen during a test.
 
 **Test Code**: [index.js](index.js)
 
