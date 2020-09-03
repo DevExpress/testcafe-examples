@@ -6,7 +6,7 @@ This example demonstrates how to extend TestCafe's standard error tracking and f
 
 **Test Code**: [index.js](index.js)
 
-The test page has 2 buttons (`Error 1` and `Error 2`), each throws an error with `.level` and `.url` custom properties when clicked. These properties are later used to filter the errors and have the following values:
+The test page has 2 buttons (`Error 1` and `Error 2`), each throws an error with `.level` and `.url` custom properties when clicked. These properties are used to filter the errors and have the following values:
 
 |Button|.level|.url|
 |------|--------|-----|
