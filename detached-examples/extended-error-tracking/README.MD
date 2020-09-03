@@ -1,6 +1,6 @@
-# Log Client-Side Errors
+# Extended Client-Side Error Tracking
 
-When a JavaScript error occurs on a tested web page, TestCafe stops test execution and posts an error message to the console. Requests to foreign resources (e.g. third-party APIs) might cause unexpected errors that are not relevant to your test. You might want to filter those errors out to ignore them during the test.
+When a JavaScript error occurs on a tested web page, TestCafe stops test execution and posts an error message to the console. Third-party code execution (e.g. controls, logging and analytics services) might cause unexpected errors that are not relevant to the tested app. You might want to filter those errors out to ignore them during the test.
 
 This example demonstrates how to expand on TestCafe's standard error logging and filter client-side errors that happen during a test.
 
@@ -13,18 +13,20 @@ The test page has 2 buttons (`Error 1` and `Error 2`), each throws an error with
 |`Error 1`|`critical`|`https://my-domain.example.com`|
 |`Error 2`|`warning`|`https://foreign-domain.example.com`|
 
-During the test, both buttons receive clicks. To log the errors, [test.clientScripts](https://devexpress.github.io/testcafe/documentation/reference/test-api/test/clientscripts.html) method injects a client script into the page. This script records all the errors that happen during the test. Errors are stored in an array.
+During the test, both buttons receive clicks. To log the errors, [test.clientScripts](https://devexpress.github.io/testcafe/documentation/reference/test-api/test/clientscripts.html) method injects a client script into the page. This script collects all the errors that happen during the test and records them into an array.
 
 > Read up on how to include and use custom scripts in your tests: [Inject Client Scripts](https://devexpress.github.io/testcafe/documentation/guides/advanced-guides/inject-client-scripts.html)
 
-That array is then checked with the [Array.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) JavaScript method to find whether any `critical` errors have happened on the `https://my-domain.example.com` domain. If such errors have occurred, the test fails, otherwise, it passes.
+The array is then checked with the [Array.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) JavaScript method to find whether any `critical` errors have happened on the tested web page. If such errors have occurred, the test fails, otherwise, it passes.
 
 ## Launch Configuration
 
 When a JavaScript error occurs on a tested web page, TestCafe stops test execution. To prevent this, use the `-e` [CLI option](https://devexpress.github.io/testcafe/documentation/reference/command-line-interface.html#-e---skip-js-errors).
 
+To launch this example only, use the following command:
+
 ```sh
-testcafe chrome index.js -e
+npm run extended-error-tracking;
 ```
 
 ## TestCafe Functions and Methods Employed in this Example
@@ -47,3 +49,7 @@ testcafe chrome index.js -e
 4. Custom Scripts:
 
    - [`Test.clientScripts` Method](https://devexpress.github.io/testcafe/documentation/reference/test-api/test/clientscripts.html)
+
+5. Command Line Interface Options:
+
+   - [`-e`](https://devexpress.github.io/testcafe/documentation/reference/command-line-interface.html#-e---skip-js-errors)
