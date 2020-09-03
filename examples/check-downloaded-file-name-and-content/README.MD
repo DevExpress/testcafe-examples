@@ -2,7 +2,7 @@
 
 **Test Code**: [index.js](index.js)
 
-This example shows how to obtain the name and the content of a file downloaded during a test.
+This example shows how to check the name and the content of a file downloaded during a test.
 
 During the test, a link click starts a file download. To verify download success and obtain the name and the content of the file, a [RequestLogger](https://devexpress.github.io/testcafe/documentation/reference/test-api/requestlogger/) is attached to the test with the [t.requestHooks](https://devexpress.github.io/testcafe/documentation/reference/test-api/test/requesthooks.html) method.
 

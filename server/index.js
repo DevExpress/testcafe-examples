@@ -1,5 +1,5 @@
 const http = require('http');
-const fs = require('fs');
+const fs   = require('fs');
 
 const SERVER_PORT = 3000;
 
