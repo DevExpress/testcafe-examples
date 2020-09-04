@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input id="upload-form" type='file' multiple>
+    <button id="btn" onclick="uploadFile()">Upload!</button>
+    <div id="info-div"></div>
+    
+    <script>
+        let form = document.getElementById('upload-form');
+        let infoDiv = document.getElementById('info-div');
+
+        uploadFile = () => {
+            infoDiv.innerHTML = '';
+            for (const file of form.files) {
+                // displayFileInfo(file);
+                let fileInfo = document.createElement("p")
+                file.text().then(v => fileInfo.innerText = v)
+
+                infoDiv.appendChild(fileInfo);
+
+            }
+        };
+
+        // displayFileInfo = (file) => {
+
+
+        // };
+
+        
+    
+
+
+       
+    </script>
+</body>
+</html>
