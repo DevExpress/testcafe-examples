@@ -2,7 +2,7 @@
 
 When a JavaScript error occurs on a tested web page, TestCafe stops test execution and posts an error message. Third-party code execution (e.g. controls, logging and analytics services) might cause unexpected errors that are not relevant to the tested app. You might want to filter those errors out to ignore them during the test.
 
-This example demonstrates how to extend TestCafe's standard error tracking and filter client-side errors that happen during a test.
+This example demonstrates how to extend TestCafe's standard error tracking and filter client-side errors that occur during a test.
 
 **Test Code**: [index.js](index.js)
 
@@ -13,11 +13,11 @@ The test page has 2 buttons (`Error 1` and `Error 2`), each throws an error with
 |`Error 1`|`critical`|`https://my-domain.example.com`|
 |`Error 2`|`warning`|`https://foreign-domain.example.com`|
 
-During the test, both buttons receive clicks. To capture the errors, [test.clientScripts](https://devexpress.github.io/testcafe/documentation/reference/test-api/test/clientscripts.html) method injects a client script into the page. This script collects all the errors that happen during the test and records them into an array.
+During the test, both buttons are clicked. To capture the errors, [test.clientScripts](https://devexpress.github.io/testcafe/documentation/reference/test-api/test/clientscripts.html) method injects a client script into the page. This script collects all the errors that occur during the test and records them into an array.
 
 > Read up on how to include and use custom scripts in your tests: [Inject Client Scripts](https://devexpress.github.io/testcafe/documentation/guides/advanced-guides/inject-client-scripts.html)
 
-The array is then checked with the [Array.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) JavaScript method to find whether any `critical` errors have happened on the tested web page. If such errors have occurred, the test passes, otherwise, it fails.
+The array is then checked with the [Array.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) JavaScript method to find whether any `critical` errors have occurred on the tested web page. If such errors have occurred, the test passes, otherwise, it fails.
 
 ## Launch Configuration
 
