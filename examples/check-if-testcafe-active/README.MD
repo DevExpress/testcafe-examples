@@ -1,7 +1,7 @@
 # Check Whether TestCafe Is Loaded
 
-Test Code: index.js
-Tested Page: index.html
+**Test Code**: [index.js](index.js)
+**Tested Page**: [index.html](index.html)
 
 If you want to change how your app operates (e.g. choose whether it should expose some data) depending on whether it is currently being tested with TestCafe. This example demonstrates how to let your application know whether TestCafe is loaded and running in the current window.
 
