@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check that the page was opened with TestCafe</title>
+</head>
+<body>
+    <div id="main">
+           The page is opened with TestCafe: <span id="result"></span>
+    </div>
+    <script>
+        const resultSpan   = document.getElementById('result');
+        const isInTestCafe = !!window['testCafeDriverInstance%'];
+           
+        resultSpan.textContent = isInTestCafe ? 'yes' : 'no';
+    </script>
+</body>
+</html>
