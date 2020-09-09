@@ -6,7 +6,7 @@
 
 This example shows how to populate a `type="file"` input with files.
 
-The tested page includes an `<input>` and a `<button>`. The input accepts multiple files. When the `<button>` is clicked files are fetched to the server as a 'POST' request.
+The tested page includes an `<input>` and a `<button>`. The input accepts multiple files. When the `<button>` is clicked, files are fetched to the server in a `POST` request.
 
 Before the test a requestLogger instance is configured and attached to the fixture with the `fixture.requestHooks` Method.
 
