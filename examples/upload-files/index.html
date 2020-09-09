@@ -6,37 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-
-    <input id="upload-form" type='file' multiple>
-    <button id="btn" onclick="uploadFile()">Upload!</button>
-    <div id="info-div"></div>
-    
+    <input id="upload-input" type="file" name="files[]" multiple />
+    <input type="button" id="btn" value="Upload Files"/>
+   
     <script>
-        let form = document.getElementById('upload-form');
-        let infoDiv = document.getElementById('info-div');
+        let submitButton = document.getElementById('btn');
 
-        uploadFile = () => {
-            infoDiv.innerHTML = '';
-            for (const file of form.files) {
-                // displayFileInfo(file);
-                let fileInfo = document.createElement("p")
-                file.text().then(v => fileInfo.innerText = v)
+        submitButton.addEventListener('click', e => {
+            const fileList = document.getElementById('upload-input').files;
+            const formData = new FormData();
 
-                infoDiv.appendChild(fileInfo);
-
-            }
-        };
-
-        // displayFileInfo = (file) => {
-
-
-        // };
-
-        
-    
-
-
-       
+            for (file of fileList){
+                formData.append('files[]', file);
+            }; 
+            fetch('http://localhost:3000/upload', {
+                method: 'post',
+                body: formData,
+            })
+            .then(response => console.log(response))
+        });
     </script>
 </body>
 </html>
