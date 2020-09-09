@@ -4,13 +4,13 @@
 
 **Tested Page**: [index.html](index.html)
 
-This example shows how to populate a `type="file"` input with files.
+TestCafe cannot test native browser dialogs, including those during file selection. For this reason, TestCafe utilizes another approach to file selection. This example shows how to select files to populate a `type="file"` input.
 
-The tested page includes an `<input>` and a `<button>`. The input accepts multiple files. When the `<button>` is clicked, files are fetched to the server in a `POST` request.
+The tested page includes an `<input>` and a `<button>`. The input accepts multiple files. A `<button>` click [fetches](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) the files to the server in a 'POST' request.
 
-Before the test a requestLogger instance is configured and attached to the fixture with the `fixture.requestHooks` Method.
+Before the test the `fixture.requestHooks` method attaches a `requestLogger` instance to the fixture. This logger records all 'POST' requests made to a server endpoint.
 
-During the test files are selected with `t.setFilesToUpload`. When a `<button>` is clicked, a fetch request occurs to the server. If one or more files were sent, the server responds with `200 OK`. If no files were sent, the server responds with `204 No Content`. TestCafe then evaluates he response status code with `t.expect.eql`.
+During the test the `t.setFilesToUpload` method selects the files to send through the `<input>`. A `<button>` click makes a fetch request to the server. If the server receives one or more files, it responds with `200 OK`, otherwise the response status code is `204 No Content`. TestCafe then evaluates the status code with `t.expect.eql`.
 
 ## TestCafe Functions and Methods Employed in This Example
 
