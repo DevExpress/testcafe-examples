@@ -11,7 +11,7 @@
     </div>
     <script>
         const resultSpan   = document.getElementById('result');
-        const isInTestCafe = !!window['testCafeDriverInstance%'];
+        const isInTestCafe = !!window['%testCafeDriverInstance%'];
            
         resultSpan.textContent = isInTestCafe ? 'yes' : 'no';
     </script>
