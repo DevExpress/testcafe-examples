@@ -1,33 +1,32 @@
 import JSONconfig from './config/config.json';
 import JSconfig from './config/config';
 import { ClientFunction } from 'testcafe';
+import { pathToFileURL } from 'url';
+import { resolve } from 'path';
 
 const getDocumentUri = ClientFunction(() => document.documentURI);
+const getFullFilePath = path => {
+    const resolvedPath = resolve(__dirname, path);
+
+    return pathToFileURL(resolvedPath).href;
+};
 
 fixture `Pass parameters to tests`
 
-process.env.Url = './src/env.html';
+//declare an environment variable
+process.env.url = './src/env.html';
 
-test('Get URL from an environment variable', async t => {
-    console.log(`Test page URL: ${process.env.Url}`);
-
-    await t
-        .expect(getDocumentUri()).match(/.*\/env.html/);
+test('Navigate to URL from an environment variable', async t => {
+    await t.expect(getDocumentUri()).eql(getFullFilePath(process.env.url));
 })
-.page(process.env.Url);
+.page(process.env.url);
 
-test('Get URL from .js configuration file', async t => {
-    console.log(`Test page URL: ${JSconfig.Url}`);
-
-    await t
-        .expect(getDocumentUri()).match(/.*\/js.html/);
+test('Navigate to URL from .js configuration file', async t => {
+    await t.expect(getDocumentUri()).eql(getFullFilePath(JSconfig.url));
 })
-.page(JSconfig.Url);
+.page(JSconfig.url);
 
-test('Get URL from JSON configuration file', async t => {
-    console.log(`Test page URL: ${JSONconfig.Url}`);
-
-    await t
-        .expect(getDocumentUri()).match(/.*\/json.html/);
+test('Navigate to URL from JSON configuration file', async t => {
+    await t.expect(getDocumentUri()).eql(getFullFilePath(JSONconfig.url));
 })
-.page(JSONconfig.Url);
+.page(JSONconfig.url);

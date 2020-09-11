@@ -1,3 +1,3 @@
 export default {
-    Url: './src/js.html'
+    url: './src/js.html'
 };
