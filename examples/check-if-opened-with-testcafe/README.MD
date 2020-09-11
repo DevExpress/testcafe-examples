@@ -3,7 +3,7 @@
 **Test Code**: [index.js](index.js)
 **Tested Page**: [index.html](index.html)
 
-You may need to change how your app operates depending on whether it is currently being tested with TestCafe. This example demonstrates how to let your application know whether it is opened with TestCafe.
+You may need to make adjustments to your application depending on whether it is tested with TestCafe. This example demonstrates how to let your application know whether it is opened with TestCafe.
 
 The test page includes a `<div>`. When the page opens, a script determines whether the page has been opened with TestCafe. The `<div>` element then displays a corresponding message.
 
