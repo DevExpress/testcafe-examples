@@ -6,22 +6,22 @@ This example demonstrates how to extend TestCafe's standard error tracking and f
 
 **Test Code**: [index.js](index.js)
 
-The test page has 2 buttons (`Error 1` and `Error 2`), each throws an error with `.level` and `.url` custom properties when clicked. These properties are used to filter the errors and have the following values:
+The test page has 2 buttons (`Error 1` and `Error 2`), which throw an error with `.level` and `.url` custom properties when clicked. These properties are used to filter errors and have the following values:
 
 |Button|.level|.url|
 |------|--------|-----|
 |`Error 1`|`critical`|`https://my-domain.example.com`|
 |`Error 2`|`warning`|`https://foreign-domain.example.com`|
 
-During the test, both buttons are clicked. To capture the errors, [test.clientScripts](https://devexpress.github.io/testcafe/documentation/reference/test-api/test/clientscripts.html) method injects a client script into the page. This script collects all the errors that occur during the test and records them into an array.
+During the test, both buttons are clicked. To capture the errors, the [test.clientScripts](https://devexpress.github.io/testcafe/documentation/reference/test-api/test/clientscripts.html) method injects a client script into the page. This script collects all the errors that occur during the test and records them into an array.
 
 > Read up on how to include and use custom scripts in your tests: [Inject Client Scripts](https://devexpress.github.io/testcafe/documentation/guides/advanced-guides/inject-client-scripts.html)
 
-The array is then checked with the [Array.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) JavaScript method to find whether any `critical` errors have occurred on the tested web page. If such errors have occurred, the test passes, otherwise, it fails.
+The array is then checked with the [Array.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) JavaScript method to find out whether any `critical` errors have occurred on the tested web page. If such errors have occurred, then the test passes, otherwise, it fails.
 
 ## Launch Configuration
 
-To launch this example only, use the following command:
+To launch only this example, use the following command:
 
 ```sh
 npm run extended-error-tracking
