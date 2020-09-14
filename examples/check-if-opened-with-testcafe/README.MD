@@ -5,7 +5,7 @@
 
 You may need to make adjustments to your application depending on whether it is tested with TestCafe. This example demonstrates how to let your application know whether it is opened with TestCafe.
 
-The test page includes a `<div>`. When the page opens, a script determines whether the page has been opened with TestCafe. The `<div>` element then displays a corresponding message.
+The test page includes a `<div>`. When the page opens, a script determines whether the page has been opened with TestCafe. The `<div>` element then displays the corresponding message.
 
 During the test, the `t.expect.eql` method checks the message text.
 
