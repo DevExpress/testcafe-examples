@@ -12,7 +12,7 @@ Before the test begins a `ClientFunction` is declared. When called, this functio
 
 During the test the `t.expect.ok` method asserts that the client function has fired.
 
-## TestCafe Functions and Methods Employed in This Example
+## TestCafe Functions and Methods Used in This Example
 
 1. Test Structure:
     - [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method
