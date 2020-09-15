@@ -3,13 +3,15 @@
 **Test Code**: [index.js](index.js)
 **Tested Page**: [index.html](index.html)
 
-You may need to make adjustments to your application depending on whether it is tested with TestCafe. This example demonstrates how to let your application know whether it is opened with TestCafe.
+When TestCafe runs, it attaches objects to the main [Window object](https://developer.mozilla.org/en-US/docs/Web/API/Window). An application can check those objects and determine whether it is opened with TestCafe.
 
-The test page includes a `<div>`. When the page opens, a script determines whether the page has been opened with TestCafe. The `<div>` element then displays the corresponding message.
+This example demonstrates how to let your application know whether it is opened with TestCafe.
 
-During the test, the `t.expect.eql` method checks the message text.
+The test page includes a `<div>` with a `<span>`. When the page is opened, a script determines whether the page was opened with TestCafe. The `<span>` element then displays `yes` or `no` accordingly.
 
-## TestCafe Functions and Methods Employed in This Example
+During the test, the `t.expect.eql` method checks the `<div>` text.
+
+## TestCafe Functions and Methods Used in This Example
 
 1. Test Structure:
    - [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method
