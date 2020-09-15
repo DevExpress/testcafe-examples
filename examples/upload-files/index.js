@@ -1,25 +1,18 @@
-import { RequestLogger } from 'testcafe';
-
-const logger = RequestLogger({url: 'http://localhost:3000/upload', method: 'POST'});
+import { Selector } from 'testcafe';
 
 fixture `My fixture`
-    .page `./index.html`
-    .requestHooks(logger);
+    .page `http://localhost:3000/examples/upload-files/index.html`;
 
-test('Select multiple files to upload', async t => {
+test('Select files to upload', async t => {
+    const uploadedFileElements = Selector('#uploaded-file-list').child('li');
+
     await t
         .setFilesToUpload('#upload-input', [
-            './uploads/text-file.txt',
-            './uploads/text-file2.txt'
+            './uploads/text-file-1.txt',
+            './uploads/text-file-2.txt'
         ])
-        .click('#btn');
-    await t
-        .expect(logger.requests[0].response.statusCode).eql(200);
-});
-
-test('Select no files to upload', async t => {
-    await t
-        .click('#btn');
-    await t
-        .expect(logger.requests[0].response.statusCode).notEql(200);
+        .click('#upload-btn')
+        .expect(uploadedFileElements.count).eql(2)
+        .expect(uploadedFileElements.nth(0).textContent).eql('text-file-1.txt')
+        .expect(uploadedFileElements.nth(1).textContent).eql('text-file-2.txt');
 });

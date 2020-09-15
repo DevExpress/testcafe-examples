@@ -6,25 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <input id="upload-input" type="file" name="files[]" multiple />
-    <input type="button" id="btn" value="Upload Files"/>
-   
-    <script>
-        let submitButton = document.getElementById('btn');
-
-        submitButton.addEventListener('click', e => {
-            const fileList = document.getElementById('upload-input').files;
-            const formData = new FormData();
-
-            for (file of fileList){
-                formData.append('files[]', file);
-            }; 
-            fetch('http://localhost:3000/upload', {
-                method: 'post',
-                body: formData,
-            })
-            .then(response => console.log(response))
-        });
-    </script>
+    <form action="http://localhost:3000/upload" method="post" enctype="multipart/form-data">
+        <input id="upload-input" type="file" name="files" multiple />
+        <input type="submit" id="upload-btn" value="Upload Files"/>
+    </form>
 </body>
 </html>
