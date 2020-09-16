@@ -29,7 +29,7 @@ npm run extended-error-tracking
 
 > When a JavaScript error occurs on a tested web page, TestCafe stops test execution. To prevent this, the `-e` [CLI option](https://devexpress.github.io/testcafe/documentation/reference/command-line-interface.html#-e---skip-js-errors) is used in this example.
 
-## TestCafe Functions and Methods Employed in this Example
+## TestCafe Functions and Methods Used in This Example
 
 1. Test Structure:
 
