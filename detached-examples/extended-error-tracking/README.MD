@@ -2,11 +2,11 @@
 
 When a JavaScript error occurs on a tested web page, TestCafe stops test execution and posts an error message. Third-party code execution (for example, controls, logging, and analytics services) can cause unexpected errors that are not related to the tested app. You can filter these errors to ignore them during the test.
 
-This example demonstrates how to extend TestCafe's standard error tracking and filter client-side errors that occur during a test.
+The following example demonstrates how to extend TestCafe's standard error tracking and how to filter client-side errors that occur during a test.
 
 **Test Code**: [index.js](index.js)
 
-The test page has 2 buttons (`Error 1` and `Error 2`), which throw an error with `.level` and `.url` custom properties when clicked. These properties are used to filter errors and have the following values:
+The test page has two buttons (`Error 1` and `Error 2`). When clicked, these buttons throw an error with `.level` and `.url` custom properties that are used to filter errors and have the following values:
 
 |Button|.level|.url|
 |------|--------|-----|
