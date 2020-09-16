@@ -71,6 +71,6 @@ The repository includes the following examples:
 * [Wait For File Download](examples/wait-for-file-download)
 * [Access Element Properties](examples/element-properties)
 
-Dedicated examples either run in one of the browsers only (Chrome or Firefox) or require additional launch arguments. For more details see the README files in the corresponding directories:
+Dedicated examples either run in one of the browsers (Chrome or Firefox) or require additional launch arguments. Launch those examples separately.
 
 * [Mock Camera/Microphone Access](dedicated-examples/mock-camera-microphone-access)
