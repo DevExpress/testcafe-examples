@@ -3,7 +3,7 @@
 **Test Code**: [index.js](index.js)
 **Tested Page**: [index.html](index.html)
 
-When TestCafe runs, it attaches objects to the main [Window object](https://developer.mozilla.org/en-US/docs/Web/API/Window). An application can check those objects and determine whether it is opened with TestCafe.
+When TestCafe runs, it exposes multiple variables with internal TestCafe data to the global object. Your application can check if any of those variables are present and conclude whether it is opened with TestCafe.
 
 This example demonstrates how to let your application know whether it is opened with TestCafe.
 
