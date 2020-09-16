@@ -3,11 +3,11 @@
 **Test Code**: [index.js](index.js)
 **Tested Page**: [index.html](index.html)
 
-When TestCafe runs, it exposes multiple variables with internal TestCafe data to the global object. Your application can check if any of those variables are present and conclude whether it is opened with TestCafe.
+When TestCafe runs, it exposes multiple variables with internal TestCafe data to the global object. Your application can check if these variables are present to determine whether it is opened with TestCafe.
 
 This example demonstrates how to let your application know whether it is opened with TestCafe.
 
-The test page includes a `<div>` with a `<span>`. When the page is opened, a script determines whether the page was opened with TestCafe. The `<span>` element then displays `yes` or `no` accordingly.
+The test page includes a `<div>` with a `<span>`. When the page is opened, a script determines whether the page was opened with TestCafe. The `<span>` element then displays `yes` or `no`.
 
 During the test, the `t.expect.eql` method checks the `<div>` text.
 
