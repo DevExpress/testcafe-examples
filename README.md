@@ -73,4 +73,4 @@ The repository includes the following examples:
 
 Below are the examples that either run in one of the browsers (Chrome or Firefox) or require additional launch arguments. Launch those examples separately.
 
-* [Mock Camera/Microphone Access](dedicated-examples/mock-camera-microphone-access)
+* [Mock Camera/Microphone Access](detached-examples/mock-camera-microphone-access)
