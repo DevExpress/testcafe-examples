@@ -4,20 +4,41 @@ fixture `Iterate through list elements`
     .page('https://devexpress.github.io/testcafe/example/');
 
 test('Iterate through list elements', async t => {
-    const ids = ['remote-testing', 'reusing-js-code', 'background-parallel-testing', 'continuous-integration-embedding', 'traffic-markup-analysis'];
+    const elementInfos = [
+        {
+            id:   'remote-testing',
+            text: 'Support for testing on remote devices'
+        },
+        {
+            id:   'reusing-js-code',
+            text: 'Re-using existing JavaScript code for testing'
+        },
+        {
+            id:   'background-parallel-testing',
+            text: 'Running tests in background and/or in parallel in multiple browsers'
+        },
+        {
+            id:   'continuous-integration-embedding',
+            text: 'Easy embedding into a Continuous integration system'
+        },
+        {
+            id:   'traffic-markup-analysis',
+            text: 'Advanced traffic and markup analysis'
+        }
+    ];
 
-    for (const item of ids) {
-        await t.click(Selector(`#${item}`));
+    for (const elementInfo of elementInfos)
+        await t.click(Selector(`#${elementInfo.id}`));
+
+    const checkboxes = Selector('legend')
+        .withExactText('Which features are important to you:')
+        .parent('fieldset').child('input[type=checkbox]');
+
+    const checkboxesCount = await checkboxes.count;
+
+    for (let i = 0; i < checkboxesCount; i++) {
+        const currentCheckbox = checkboxes.nth(i);
+        
+        await t.expect(currentCheckbox.textContent).eql(elementInfos[i].text);
     }
-
-    const itemsText = ['Support for testing on remote devices', 'Re-using existing JavaScript code for testing', 'Running tests in background and/or in parallel in multiple browsers', 'Easy embedding into a Continuous integration system', 'Advanced traffic and markup analysis'];
-
-
-    for (const text of itemsText) {
-        let counter = 0;
-        const checkboxes = Selector('label').withExactText(text).child('input').withAttribute('type', 'checkbox')
-        await t.expect( checkboxes.checked ).ok();
-        counter++;
-    }
-
 });
