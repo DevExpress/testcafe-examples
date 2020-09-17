@@ -2,7 +2,7 @@
 
 **Test Code**: [index.js](index.js)
 
-This example demonstrates how to pass parameters to TestCafe tests from the following sources:
+This example demonstrates how to pass parameters to TestCafe tests. The parameter values can be obtained from the following sources:
 
 * a JSON configuration file
 * a JavaScript object
