@@ -10,7 +10,7 @@ This example demonstrates how to pass parameters to TestCafe tests from the foll
 
 Before the tests, the `.json` and `.js` configuration files are imported with JavaScript [import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) syntax. The environment variable is declared with the [process.env](https://nodejs.org/api/process.html#process_process_env) property. These values are then available inside tests.
 
-Duringeach of the tests, the `test.page` method reads one of these values to decide the page where the test starts. A `clientFunction` that is declared before the tests begin obtains the full URL of the current page. The `t.expect.eql` method compares this value to the full path to the file that the configuration file or the environment variable specified.
+During each of the tests, the `test.page` method reads one of these values to decide the page where the test starts. A `clientFunction` that is declared before the tests begin obtains the full URL of the current page. The `t.expect.eql` method compares this value to the full path to the file that the configuration file or the environment variable specified.
 
 ## TestCafe Functions and Methods Used in This Example
 
