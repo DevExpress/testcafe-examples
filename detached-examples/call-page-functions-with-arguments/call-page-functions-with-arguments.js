@@ -8,7 +8,9 @@ test('YouTube Playback', async t => {
     const play        = ClientFunction(() => document.querySelector('.video-stream').play());
     const pause       = ClientFunction(() => document.querySelector('.video-stream').pause());
     const currentTime = ClientFunction(() => document.querySelector('.video-stream').currentTime);
-    const setTime     = ClientFunction((time) => document.querySelector('.video-stream').currentTime = time);
+    const setTime     = ClientFunction(time => {
+        document.querySelector('.video-stream').currentTime = time;
+    });
 
     await pause();
 
