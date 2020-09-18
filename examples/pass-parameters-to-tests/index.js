@@ -13,7 +13,7 @@ const getFullFilePath = path => {
 
 fixture `Pass parameters to tests`
 
-//declare an environment variable
+//set an environment variable
 process.env.url = './src/env.html';
 
 test('Navigate to URL from an environment variable', async t => {
