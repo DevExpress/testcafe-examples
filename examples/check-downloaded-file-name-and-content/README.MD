@@ -18,4 +18,4 @@ The Request Logger has the following [options](https://devexpress.github.io/test
 |`logResponseBody`| logs the response body|
 |`stringifyResponseBody`| converts the response body to a string|
 
-The file name is read from the `content-disposition` response header. The response body contains the contents of the file.
+The file name is read from the `content-disposition` response header. The response body is added to the file content.
