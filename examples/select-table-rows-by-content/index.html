@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select table rows</title>
+    <style>
+        .highlighted {
+            background-color: red;
+        }
+    </style>
+    <script>
+        const rows = document.querySelectorAll('tr');
+
+        rows.forEach( row => { row.addEventListener('click', (e) => {
+            rows.forEach( row => row.removeAttribute('class'));
+            row.setAttribute('class', 'highlighted');
+            })         
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>John</td>
+            <td>Smith</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Oliver</td>
+            <td>Black</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Harry</td>
+            <td>Red</td>
+        </tr>
+    </table>
+</body>
+</html>
