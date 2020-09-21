@@ -8,9 +8,9 @@ This example demonstrates how to pass parameters to TestCafe tests. You can obta
 * a JavaScript object
 * an environment variable
 
-Before the test execution, two parameters are loaded from the `.json` and `.js` files with an [import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) statement. The third parameter is set as an environment variable with the [process.env](https://nodejs.org/api/process.html#process_process_env) property.
+Before test execution, two parameters are loaded from the `.json` and `.js` files with an [import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) statement. The third parameter is set as an environment variable with the [process.env](https://nodejs.org/api/process.html#process_process_env) property.
 
-For each test, the `test.page` method sets the initial page. The page URL is passed as its parameter. Then, a `clientFunction` obtains the [File URL](https://nodejs.org/api/url.html#url_url_pathtofileurl_path) of the current page, and the `t.expect.eql` method compares this value to the full path calculated based on the specified parameter.
+The `test.page` method sets the initial page for each test. The page URL is passed as its parameter. Then, a `clientFunction` obtains the [File URL](https://nodejs.org/api/url.html#url_url_pathtofileurl_path) of the current page, and the `t.expect.eql` method compares this value to the full path calculated based on the specified parameter.
 
 ## TestCafe Functions and Methods Used in This Example
 
