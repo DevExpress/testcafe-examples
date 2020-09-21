@@ -50,10 +50,27 @@ See [Command Line Interface](https://devexpress.github.io/testcafe/documentation
 
 ## Examples in This Repository
 
-> We are in the process of filling this repository with more examples.
+> We are in the process of adding more examples to this repository.
 
-The examples are organized in the following sections:
+The repository includes the following examples:
 
-* [Inject Custom Client Scripts](examples/client-scripts/)
-* [Access Element Properties](examples/element-properties/)
-* [Manipulate the Tested Page](examples/page-manipulation/)
+* [Find Element By Trimmed Text](examples/find-element-by-trimmed-text)
+* [Use XPath Selectors](examples/use-xpath-selectors)
+* [Access Element Properties](examples/element-properties)
+* [Iterate Over Table Rows](examples/iterate-over-table-rows)
+* [Test \<select\> Elements](examples/test-select-elements)
+* [Page Reload](examples/page-manipulation)
+* [Extract Code to Helpers](examples/extract-code-to-helpers)
+* [Create Data-Driven Tests](examples/create-data-driven-tests)
+* [Use Page Model](examples/use-page-model)
+* [Inject Custom Client Scripts](examples/client-scripts)
+* [Import Third-Party Modules](examples/import-third-party-modules)
+* [Mock Date](examples/mock-date)
+* [Mock Geolocation API](examples/mock-geolocation-api)
+* [Wait Until an Element Property Has a Specific Value](examples/wait-for-element-property-value)
+* [Wait For File Download](examples/wait-for-file-download)
+* [Access Element Properties](examples/element-properties)
+
+Below are the examples that run in Chrome or Firefox only or require additional launch arguments. You should launch these examples separately.
+
+* [Mock Camera/Microphone Access](detached-examples/mock-camera-microphone-access)
