@@ -50,7 +50,7 @@ See [Command Line Interface](https://devexpress.github.io/testcafe/documentation
 
 ## Examples in This Repository
 
-> We are in the process of filling this repository with more examples.
+> We are in the process of adding more examples to this repository.
 
 The repository includes the following examples:
 
@@ -71,6 +71,6 @@ The repository includes the following examples:
 * [Wait For File Download](examples/wait-for-file-download)
 * [Access Element Properties](examples/element-properties)
 
-Below are the examples that either run in one of the browsers (Chrome or Firefox) or require additional launch arguments. Launch those examples separately.
+Below are the examples that run in Chrome or Firefox only or require additional launch arguments. You should launch these examples separately.
 
 * [Mock Camera/Microphone Access](detached-examples/mock-camera-microphone-access)
