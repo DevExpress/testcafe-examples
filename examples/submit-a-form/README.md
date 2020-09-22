@@ -6,13 +6,14 @@ This example shows how to submit a form with DOM API. To run code in the browser
 
 During the test, the [t.typeText](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/typetext.html) action types the developer name into the corresponding field. Then, the test calls the `submitForm` client function that submits the form with [HTMLFormElement.requestSubmit](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/requestSubmit). Finally, the [t.expect.contains](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/contains.html) assertion verifies that the `Thank you` page opens and displays the entered developer name.
 
-## TestCafe API Used
+## TestCafe API Used in This Example
 
-* Browser Code
-  * [ClientFunction](https://devexpress.github.io/testcafe/documentation/reference/test-api/clientfunction/constructor.html) Constructor
-* Test Structure
-  * [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method
-* Actions
-  * [t.typeText](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/typetext.html) Method
-* Assertion
-  * [t.expect.contains](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/contains.html) Method
+1. Test Structure:
+    * [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method
+    * [test](https://devexpress.github.io/testcafe/documentation/reference/test-api/global/test.html) Function
+2. Element Identification and Actions:
+    * [t.typeText](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/typetext.html) Method
+3. Assertion and Evaluation:
+    * [t.expect.contains](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/contains.html) Method
+4. Custom Scripts:
+    * [ClientFunction](https://devexpress.github.io/testcafe/documentation/reference/test-api/clientfunction/) Object

@@ -15,12 +15,13 @@ The test runs against a YouTube page. During the test, the video is paused, seek
 
 First, the test pauses the video, seeks it to the `60`th second, and prints the current time in the console. Then it resumes playback, plays for `10` more seconds, and prints the time again.
 
-## TestCafe API Used
+## TestCafe API Used in This Example
 
-* Browser Code
-  * [ClientFunction](https://devexpress.github.io/testcafe/documentation/reference/test-api/clientfunction/constructor.html) Constructor
-* Test Structure
-  * [Fixture.meta](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/meta.html) Method
-  * [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method
-* Actions
-  * [t.wait](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/wait.html) Method
+1. Test Structure:
+    * [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method
+    * [Fixture.meta](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/meta.html) Method
+    * [test](https://devexpress.github.io/testcafe/documentation/reference/test-api/global/test.html) Function
+2. Element Identification and Actions:
+    * [t.wait](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/wait.html) Method
+3. Custom Scripts:
+    * [ClientFunction](https://devexpress.github.io/testcafe/documentation/reference/test-api/clientfunction/) Object
