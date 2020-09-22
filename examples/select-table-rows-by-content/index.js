@@ -1,8 +1,7 @@
 import { Selector } from 'testcafe'
 
 fixture `Check table row content`
-
-.page('./index.html')
+    .page('./index.html')
 
 test('Check table row content', async t => {
     const rowData = {

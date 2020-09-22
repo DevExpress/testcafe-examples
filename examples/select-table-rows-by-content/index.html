@@ -9,15 +9,6 @@
             background-color: red;
         }
     </style>
-    <script>
-        const rows = document.querySelectorAll('tr');
-
-        rows.forEach( row => { row.addEventListener('click', (e) => {
-            rows.forEach( row => row.removeAttribute('class'));
-            row.setAttribute('class', 'highlighted');
-            })         
-        });
-    </script>
 </head>
 <body>
     <table>
@@ -42,5 +33,15 @@
             <td>Red</td>
         </tr>
     </table>
+
+    <script>
+        const rows = document.querySelectorAll('tr');
+
+        rows.forEach( row => { row.addEventListener('click', (e) => {
+            rows.forEach( row => row.removeAttribute('class'));
+            row.setAttribute('class', 'highlighted');
+            })      
+        });
+    </script>
 </body>
 </html>
