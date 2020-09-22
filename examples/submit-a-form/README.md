@@ -8,12 +8,12 @@ During the test, the [t.typeText](https://devexpress.github.io/testcafe/document
 
 ## TestCafe API Used in This Example
 
-1. Test Structure:
-    * [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method
-    * [test](https://devexpress.github.io/testcafe/documentation/reference/test-api/global/test.html) Function
-2. Element Identification and Actions:
-    * [t.typeText](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/typetext.html) Method
-3. Assertion and Evaluation:
-    * [t.expect.contains](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/contains.html) Method
-4. Custom Scripts:
-    * [ClientFunction](https://devexpress.github.io/testcafe/documentation/reference/test-api/clientfunction/) Object
+* Test Structure:
+  * [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method
+  * [test](https://devexpress.github.io/testcafe/documentation/reference/test-api/global/test.html) Function
+* Element Identification and Actions:
+  * [t.typeText](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/typetext.html) Method
+* Assertion and Evaluation:
+  * [t.expect.contains](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/contains.html) Method
+* Custom Scripts:
+  * [ClientFunction](https://devexpress.github.io/testcafe/documentation/reference/test-api/clientfunction/) Object

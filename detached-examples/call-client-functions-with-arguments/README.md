@@ -17,11 +17,11 @@ First, the test pauses the video, seeks it to the `60`th second, and prints the 
 
 ## TestCafe API Used in This Example
 
-1. Test Structure:
-    * [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method
-    * [Fixture.meta](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/meta.html) Method
-    * [test](https://devexpress.github.io/testcafe/documentation/reference/test-api/global/test.html) Function
-2. Element Identification and Actions:
-    * [t.wait](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/wait.html) Method
-3. Custom Scripts:
-    * [ClientFunction](https://devexpress.github.io/testcafe/documentation/reference/test-api/clientfunction/) Object
+* Test Structure:
+  * [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method
+  * [Fixture.meta](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/meta.html) Method
+  * [test](https://devexpress.github.io/testcafe/documentation/reference/test-api/global/test.html) Function
+* Element Identification and Actions:
+  * [t.wait](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/wait.html) Method
+* Custom Scripts:
+  * [ClientFunction](https://devexpress.github.io/testcafe/documentation/reference/test-api/clientfunction/) Object

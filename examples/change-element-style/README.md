@@ -12,16 +12,16 @@ In the `Remove header color` test, a client function modifies the `h1` header's 
 
 ## TestCafe API Used in This Example
 
-1. Test Structure:
-    * [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method
-    * [test](https://devexpress.github.io/testcafe/documentation/reference/test-api/global/test.html) Function
-2. Element Identification and Actions:
-    * [Selector](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/) Object
-    * [Selector.getStyleProperty](https://devexpress.github.io/testcafe/documentation/reference/test-api/domnodestate.html) Method
-    * [Selector.visible](https://devexpress.github.io/testcafe/documentation/reference/test-api/domnodestate.html) Property
-3. Assertion and Evaluation:
-    * [t.expect.eql](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/eql.html) Method
-    * [t.expect.ok](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/ok.html) Method
-    * [t.expect.notOk](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/notok.html) Method
-4. Custom Scripts:
-    * [ClientFunction](https://devexpress.github.io/testcafe/documentation/reference/test-api/clientfunction/) Object
+* Test Structure:
+  * [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method
+  * [test](https://devexpress.github.io/testcafe/documentation/reference/test-api/global/test.html) Function
+* Element Identification and Actions:
+  * [Selector](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/) Object
+  * [Selector.getStyleProperty](https://devexpress.github.io/testcafe/documentation/reference/test-api/domnodestate.html) Method
+  * [Selector.visible](https://devexpress.github.io/testcafe/documentation/reference/test-api/domnodestate.html) Property
+* Assertion and Evaluation:
+  * [t.expect.eql](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/eql.html) Method
+  * [t.expect.ok](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/ok.html) Method
+  * [t.expect.notOk](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/notok.html) Method
+* Custom Scripts:
+  * [ClientFunction](https://devexpress.github.io/testcafe/documentation/reference/test-api/clientfunction/) Object
