@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="err1-btn" onclick="throwError1();">Error 1</button>
+    <button id="err2-btn" onclick="throwError2();">Error 2</button>
+
+    <script>
+        function throwError1() { 
+            var error = new Error("This is a 'critical' level error");
+
+            error.level = 'critical';
+            error.url   = 'https://my-domain.example.com';
+            
+            throw error;
+        };
+        function throwError2() {
+            var error =  new Error("This is a 'warning' level error")
+
+            error.level = 'warning';
+            error.url   = 'https://foreign-domain.example.com';
+            
+            throw error;
+        };
+
+    </script>
+</body>
+</html>
