@@ -1,14 +1,14 @@
-# Iterate Over Elements of a List
+# Iterate Over a List of Elements
 
 **Test Code**: [index.js](index.js)
 
 **Tested Page**: [TestCafe Example](https://devexpress.github.io/testcafe/example/)
 
-This example shows how to iterate over elements of a list and assert their values.
+This example shows how to iterate over a list of elements and assert their values.
 
-The tested page includes a list of elements, each with an `<input type="checkbox"`> element and some text.
+The tested page includes a list of `<input type="checkbox">` elements.
 
-The expected values of the list items are declared as an array of objects and have the following structure:
+The expected values of the list items and their ids are declared as an array of objects and have the following structure:
 
 ```js
 [
@@ -22,7 +22,7 @@ The expected values of the list items are declared as an array of objects and ha
 ]
 ```
 
-A `for ... of` loop iterates over the list and clicks each checkbox with the `t.click` action. A `for` loop then asserts the text of each item with the `t.expect.eql` method. The number of iterations is set to the amount of list items with the `Selector.count` property.
+The test clicks each of the list items to set the 'checked' state. After that, the test calculates the count of input elements with the `Selector.count` property and iterates through the list of these elements with a `for` loop. Inside the loop, the input's text is compared to the expected value with the `t.expect.eql` method.
 
 ## TestCafe Functions and Methods Used in This Example
 

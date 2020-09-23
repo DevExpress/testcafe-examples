@@ -1,16 +1,16 @@
-# Select Table Row by Content
+# Select a Table Row by Cell Contents
 
 **Test Code**: [index.js](index.js)
 
 **Tested Page**: [index.html](index.html)
 
-This example shows how to select table rows based on the content of that row.
+This example shows how to select a table row based on the contents of a cell inside that row.
 
 The tested page includes a table with `Id`, `First name` and `Last name` fields. The table has three rows of data.
 
-A click on the row highlights it with a `background-color` CSS property.
+A click on the row highlights it with a custom `highlighted` CSS class.
 
-During the test the expected row data is declared as a JavaScript object. The `t.eql` method compares the object values with actual values found in each of the table rows.
+During the test the expected row data is declared as a JavaScript object. The `t.eql` method compares the object values with actual values found in each of the cells and check that the row has a `highlighted` class.
 
 ## TestCafe Functions and Methods Used in This Example
 

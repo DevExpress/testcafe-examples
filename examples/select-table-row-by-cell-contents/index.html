@@ -36,11 +36,13 @@
 
     <script>
         const rows = document.querySelectorAll('tr');
+        const rowsArr = Array.prototype.slice.call(rows);
 
-        rows.forEach( row => { row.addEventListener('click', (e) => {
-            rows.forEach( row => row.removeAttribute('class'));
-            row.setAttribute('class', 'highlighted');
-            })      
+        rowsArr.forEach(function (row) { 
+            row.addEventListener('click', function (e) {
+                rowsArr.forEach(row => row.removeAttribute('class'));
+                row.setAttribute('class', 'highlighted');
+            })
         });
     </script>
 </body>
