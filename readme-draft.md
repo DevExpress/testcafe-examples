@@ -24,37 +24,37 @@ command
 
 ## TestCafe API Used in This Example
 
-1. Test Structure:
-    * [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method
-    * [Fixture.meta](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/meta.html) Method
-    * [Test.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/test/page.html) Method
-    * [fixture](https://devexpress.github.io/testcafe/documentation/reference/test-api/global/fixture.html) Function
-    * [test](https://devexpress.github.io/testcafe/documentation/reference/test-api/global/test.html) Function
-2. Element Identification and Actions:
-    * [Selector](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/) Object
-    * [Selector.visible](https://devexpress.github.io/testcafe/documentation/reference/test-api/domnodestate.html) Property
-    * [t.typeText](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/typetext.html) Method
-    * [t.click](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/click.html) Method
-    * [t.wait](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/wait.html) Method
-    * [Selector.withExactText](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/withexacttext.html) Method
-    * [Selector.withText](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/withtext.html) Method
-    * [Selector.parent](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/parent.html) Method
-    * [Selector.child](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/child.html) Method
-    * [Selector.nth](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/nth.html) Method
-    * [Selector.getStyleProperty](https://devexpress.github.io/testcafe/documentation/reference/test-api/domnodestate.html) Method
-3. Assertion and Evaluation:
-    * [t.eval](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/eval.html) Method
-    * [t.expect.eql](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/eql.html) Method
-    * [t.expect.ok](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/ok.html) Method
-    * [t.expect.notOk](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/notok.html) Method
-    * [t.expect.match](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/match.html) Method
-    * [t.expect.contains](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/contains.html) Method
-    * [Selector.addCustomDOMProperties](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/addcustomdomproperties.html) Method
-    * [Selector.count](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/count.html) Property
-4. Custom Scripts:
-    * [Fixture.clientScripts](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/clientscripts.html) Method
-    * [ClientFunction](https://devexpress.github.io/testcafe/documentation/reference/test-api/clientfunction/) Object
-5. Request Handlers:
-    * [Fixture.requestHooks](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/requesthooks.html) Method
-6. Command Line Interface Options:
-    * (list of items w/ links)
+* Test Structure:
+  * [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method
+  * [Fixture.meta](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/meta.html) Method
+  * [Test.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/test/page.html) Method
+  * [fixture](https://devexpress.github.io/testcafe/documentation/reference/test-api/global/fixture.html) Function
+  * [test](https://devexpress.github.io/testcafe/documentation/reference/test-api/global/test.html) Function
+* Element Identification and Actions:
+  * [Selector](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/) Object
+  * [Selector.visible](https://devexpress.github.io/testcafe/documentation/reference/test-api/domnodestate.html) Property
+  * [t.typeText](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/typetext.html) Method
+  * [t.click](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/click.html) Method
+  * [t.wait](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/wait.html) Method
+  * [Selector.withExactText](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/withexacttext.html) Method
+  * [Selector.withText](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/withtext.html) Method
+  * [Selector.parent](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/parent.html) Method
+  * [Selector.child](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/child.html) Method
+  * [Selector.nth](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/nth.html) Method
+  * [Selector.getStyleProperty](https://devexpress.github.io/testcafe/documentation/reference/test-api/domnodestate.html) Method
+* Assertion and Evaluation:
+  * [t.eval](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/eval.html) Method
+  * [t.expect.eql](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/eql.html) Method
+  * [t.expect.ok](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/ok.html) Method
+  * [t.expect.notOk](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/notok.html) Method
+  * [t.expect.match](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/match.html) Method
+  * [t.expect.contains](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/contains.html) Method
+  * [Selector.addCustomDOMProperties](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/addcustomdomproperties.html) Method
+  * [Selector.count](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/count.html) Property
+* Custom Scripts:
+  * [Fixture.clientScripts](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/clientscripts.html) Method
+  * [ClientFunction](https://devexpress.github.io/testcafe/documentation/reference/test-api/clientfunction/) Object
+* Request Handlers:
+  * [Fixture.requestHooks](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/requesthooks.html) Method
+* Command Line Interface Options:
+  * (list of items w/ links)
