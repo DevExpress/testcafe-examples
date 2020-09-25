@@ -15,8 +15,7 @@
   "scripts": {
     "examples": "testcafe chrome,firefox examples -a \"node server/index.js\"",
     "mock-camera-microphone-access": " testcafe --hostname localhost \"chrome --use-fake-ui-for-media-stream --use-fake-device-for-media-stream\" detached-examples/mock-camera-microphone-access/mock-camera-microphone-access.js",
-    "autoplay-examples": "testcafe \"chrome --autoplay-policy=no-user-gesture-required\" detached-examples --fixture-meta autoplay=true",
-    "test": "npm run examples && npm run mock-camera-microphone-access && npm run autoplay-examples"
+    "test": "npm run examples && npm run mock-camera-microphone-access"
   },
   "devDependencies": {
     "mockdate": "^2.0.5"
