@@ -6,24 +6,22 @@
 
 This example shows how to select a table row based on the cell content.
 
-The tested page includes a table with `Id`, `First name` and `Last name` columns and three rows of data.
-A click on the row highlights it with a `highlighted` CSS class.
+The tested page includes a table with `Id`, `First name` and `Last name` columns and three rows of data. A click on a row highlights it.
 
-The test searches the table by the value of its `Id` column to find the desired row and click it. Then it asserts that the row is highlighted, and has expected cell values.
-
-During the test the expected row data is declared as a JavaScript object. The `t.eql` method compares the object values with actual values found in each of the cells and check that the row has a `highlighted` class.
+The test identifies the target row by the value of its `Id` column. Then it uses the `t.eql` method to assert that the row has expected cell values and the `t.ok` method to check that it is highlighted.
 
 ## TestCafe Functions and Methods Used in This Example
 
 1. Test Structure:
-    - [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method
-    - [test](https://devexpress.github.io/testcafe/documentation/reference/test-api/global/test.html) Function
+    * [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method
+    * [test](https://devexpress.github.io/testcafe/documentation/reference/test-api/global/test.html) Function
 2. Element Identification and Actions:
-    - [Selector](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/) Object
-    - [t.click](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/click.html) Method
-    - [Selector.withExactText](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/withexacttext.html) Method
-    - [Selector.parent](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/parent.html) Method
-    - [Selector.child](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/child.html) Method
-    - [Selector.nth](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/nth.html) Method
+    * [Selector](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/) Object
+    * [t.click](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/click.html) Method
+    * [Selector.withExactText](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/withexacttext.html) Method
+    * [Selector.parent](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/parent.html) Method
+    * [Selector.child](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/child.html) Method
+    * [Selector.nth](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/nth.html) Method
+    * [DOM Node State Object](https://devexpress.github.io/testcafe/documentation/reference/test-api/domnodestate.html): `hasClass` Method
 3. Assertion and Evaluation:
-    - [t.expect.eql](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/eql.html) Method
+    * [t.expect.eql](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/eql.html) Method
