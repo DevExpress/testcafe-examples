@@ -15,7 +15,7 @@ The test runs against a YouTube page. During the test, the video is paused, seek
 
 First, the test pauses the video, seeks it to the `60`th second, and prints the current time in the console. Then it resumes playback, plays for `10` more seconds, and prints the time again.
 
-## TestCafe API Used in This Example
+## TestCafe API in This Example
 
 * Test Structure:
   * [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method

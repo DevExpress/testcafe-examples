@@ -10,7 +10,7 @@ During the `Hide an element` test, the `hidePopulateButton` client function sets
 
 In the `Remove header color` test, a client function modifies the `h1` header's [style.color](https://developer.mozilla.org/en-US/docs/Web/CSS/color) to change its color to black. The [t.expect.eql](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/ok.html) assertions verify that the element's color has changed. To obtain the color value, the selector's [getStyleProperty](https://devexpress.github.io/testcafe/documentation/reference/test-api/domnodestate.html) method is used.
 
-## TestCafe API Used in This Example
+## TestCafe API in This Example
 
 * Test Structure:
   * [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method

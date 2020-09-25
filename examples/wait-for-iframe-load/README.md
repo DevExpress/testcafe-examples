@@ -10,7 +10,7 @@ The test runs against a [DevExpress demo page](https://js.devexpress.com/Demos/W
 
 Note that if you add more actions after [t.switchToIframe](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/switchtoiframe.html), they are executed against the iframe content.
 
-## TestCafe API Used
+## TestCafe API in This Example
 
 * Page Element Selection
   * [Selector](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/constructor.html) Constructor

@@ -6,7 +6,7 @@ This example shows how to submit a form with DOM API. To run code in the browser
 
 During the test, the [t.typeText](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/typetext.html) action types the developer name into the corresponding field. Then, the test calls the `submitForm` client function that submits the form with [HTMLFormElement.requestSubmit](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/requestSubmit). Finally, the [t.expect.contains](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/contains.html) assertion verifies that the `Thank you` page opens and displays the entered developer name.
 
-## TestCafe API Used in This Example
+## TestCafe API in This Example
 
 * Test Structure:
   * [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method
