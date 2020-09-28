@@ -16,7 +16,7 @@ test('Hide an element', async t => {
     await t.expect(populateButton.visible).notOk();
 });
 
-test('Remove header color', async t => {
+test('Change header color', async t => {
     const header            = Selector('h1');
     const removeHeaderColor = ClientFunction(() => {
         document.querySelector('h1').style.color = '#111';
