@@ -3,7 +3,7 @@ import { Selector } from 'testcafe';
 fixture `My fixture`
     .page `http://localhost:3000/examples/upload-files/index.html`;
 
-test('Select files to upload', async t => {
+test('Check uploaded files', async t => {
     const uploadedFileElements = Selector('#uploaded-file-list').child('li');
 
     await t
