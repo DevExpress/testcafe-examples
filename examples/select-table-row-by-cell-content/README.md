@@ -8,9 +8,9 @@ This example shows how to select a table row based on the cell content.
 
 The tested page includes a table with `Id`, `First name` and `Last name` columns and three rows of data. A click on a row highlights it.
 
-The test identifies the target row by the value of its `Id` column. Then it uses the `t.eql` method to assert that the row has expected cell values and the `t.ok` method to check that it is highlighted.
+The test identifies the target row by the value of its `Id` column. Then it uses the `t.eql` method to verify cell values in this row and the `t.ok` method to check that it is highlighted.
 
-## TestCafe Functions and Methods Used in This Example
+## TestCafe API in This Example
 
 1. Test Structure:
     * [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method

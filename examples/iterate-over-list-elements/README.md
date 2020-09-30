@@ -4,7 +4,7 @@
 
 **Tested Page**: [TestCafe Example](https://devexpress.github.io/testcafe/example/)
 
-This example shows how to iterate over a list of elements and assert their values.
+This example shows how to iterate over a list of elements and use their values in assertions.
 
 The tested page includes a list of `<input type="checkbox">` elements.
 
@@ -22,9 +22,9 @@ The expected values of the list items and their ids are declared as an array of 
 ]
 ```
 
-The test clicks each of the list items to set the 'checked' state. After that, the test calculates the count of input elements with the `Selector.count` property and iterates through the list of these elements with a `for` loop. Inside the loop, the input's text is compared to the expected value with the `t.expect.eql` method.
+The test clicks each of the list items to to check them. After that, the test uses the `Selector.count` property to obtain the number of input elements and iterates through the list of these elements in a `for` loop. Inside the loop, the input's text is compared to the expected value with the `t.expect.eql` method.
 
-## TestCafe Functions and Methods Used in This Example
+## TestCafe API in This Example
 
 1. Test Structure:
     - [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method
