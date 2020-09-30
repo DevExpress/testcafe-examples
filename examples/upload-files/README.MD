@@ -4,7 +4,7 @@
 
 **Tested Page**: [index.html](index.html)
 
-TestCafe cannot access the browser's `Choose File` dialog to emulate file selection within it. For this reason, TestCafe utilizes another approach to file selection. This example shows how to select files to populate a `type="file"` input.
+TestCafe cannot access the browser's `Choose File` dialog to emulate file selection. For this reason, TestCafe uses another way to select files. This example shows how to select files to populate a `type="file"` input.
 
 The sample page includes a `<form>` that contains:
 
