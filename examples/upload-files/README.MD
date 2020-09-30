@@ -4,16 +4,16 @@
 
 **Tested Page**: [index.html](index.html)
 
-TestCafe cannot access the browser's `Choose File` dialog to emulate file selection. For this reason, TestCafe uses another way to select files. This example shows how to select files to populate a `type="file"` input.
+TestCafe cannot access the browser's `Choose File` dialog to emulate file selection. This example shows how to add files to a `type="file"` input without browser dialogs.
 
 The sample page includes a `<form>` that contains:
 
 * an `<input>` with `type="file"` that holds the selected files
 * an `<input>` with `type="submit"` that sends the files to the server
 
-During the test the `t.setFilesToUpload` method sets the files for the `<input type="file">`. A click on the `<input type="submit">` initiates the file upload to the server. The server responds with a list of uploaded files, which is checked with the `t.expect.eql` Method.
+During the test the `t.setFilesToUpload` method sets the files for the `<input type="file">`. The test clicks the `<input type="submit">` to initiates the file upload. The server responds with a list of uploaded files, which is checked with the `t.expect.eql` Method.
 
-## TestCafe Functions and Methods Used in This Example
+## TestCafe API Used in This Example
 
 1. Test Structure:
    * [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method
