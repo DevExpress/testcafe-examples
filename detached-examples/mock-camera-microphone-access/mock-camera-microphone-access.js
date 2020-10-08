@@ -1,7 +1,7 @@
 import { Selector } from 'testcafe';
 
 fixture`Mock microphone/camera access`
-    .page('./index.html')
+    .page('./index.html');
 
 test('take a photo', async t => {
     const photoButton = Selector('#photoButton')
