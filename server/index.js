@@ -47,6 +47,17 @@ http
                 res.end(resultHtml);
             });
         }
+
+        else if (req.url === '/images/image.png') {
+            setTimeout( () => {
+                const fileStream = fs.createReadStream('./server/data/images/image.png');
+
+                res.setHeader('content-disposition', 'attachment; filename=image.png');
+                fileStream.pipe(res);
+            },
+            15000);
+        }
+
         else {
             const repositoryRoot = path.resolve(__dirname, '..');
             const resourcePath   = path.join(repositoryRoot, req.url);
