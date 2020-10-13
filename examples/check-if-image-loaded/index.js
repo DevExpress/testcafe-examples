@@ -9,10 +9,10 @@ const checkImageIsLoaded = ClientFunction(function() {
     })
 });
 
-fixture`My fixture`
+fixture`Check if image has loaded`
     .page('./index.html');
 
-test('My test', async t => {
+test('Check if image has loaded', async t => {
     let result = await checkImageIsLoaded();
 
     await t

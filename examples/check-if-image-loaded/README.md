@@ -4,9 +4,9 @@
 
 **Tested Page**: [index.html](index.html)
 
-This example shows how to check whether an image on the page has successfully loaded.
+This example shows how to check whether an image on the page has loaded without errors.
 
-The tested page requests an image from the server. The server responds with the image in a 15 seconds timeout.
+The tested page requests an image from the server. The server responds with the image after a timeout specified in the request options.
 
 If the image loads without errors, the promise is resolved, otherwise it's rejected.
 

@@ -27,7 +27,7 @@ http
         console.log(req.url);
 
         if (req.url === '/download-file') {
-            const fileStream = fs.createReadStream('./server/data/text-file.txt');
+            const fileStream = fs.createReadStream('./data/text-file.txt');
 
             res.setHeader('content-disposition', 'attachment; filename=text-file.txt');
             fileStream.pipe(res);
