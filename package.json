@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "mockdate": "^2.0.5",
-    "multiparty": "^4.2.2"
+    "multiparty": "^4.2.2",
+    "node-static": "^0.7.11"
   }
 }
