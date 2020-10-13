@@ -7,8 +7,6 @@ const querystring = require('querystring');
 
 //
 var nStatic = require('node-static');
-
-
 //
 
 const SERVER_PORT = 3000;
@@ -27,7 +25,7 @@ http
         console.log(req.url);
 
         if (req.url === '/download-file') {
-            const fileStream = fs.createReadStream('./data/text-file.txt');
+            const fileStream = fs.createReadStream('./server/data/text-file.txt');
 
             res.setHeader('content-disposition', 'attachment; filename=text-file.txt');
             fileStream.pipe(res);
@@ -57,6 +55,19 @@ http
         }
 
         else {
+            // const repositoryRoot = path.resolve(__dirname, '..');
+            // const resourcePath   = path.join(repositoryRoot, req.url);
+            // const content        = fs.existsSync(resourcePath) ? fs.readFileSync(resourcePath).toString() : '';
+            // const contentType    = CONTENT_TYPES[path.extname(resourcePath)];
+            // const queryStr       = url.parse(req.url).query;
+            // const delay          = parseInt(querystring.parse(queryStr).delay || 0);
+
+            // if (contentType)
+            //     res.setHeader('content-type', contentType);
+
+            // setTimeout(() => {
+            // res.end(content);
+            // }, delay);
             const fileServer = new nStatic.Server('./public');
             const queryStr       = url.parse(req.url).query;
             const delay          = parseInt(querystring.parse(queryStr).delay || 0);
