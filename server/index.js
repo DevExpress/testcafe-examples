@@ -2,6 +2,14 @@ const http       = require('http');
 const fs         = require('fs');
 const path       = require('path');
 const multiparty = require('multiparty');
+const url         = require('url');
+const querystring = require('querystring');
+
+//
+var nStatic = require('node-static');
+
+
+//
 
 const SERVER_PORT = 3000;
 
@@ -48,26 +56,14 @@ http
             });
         }
 
-        else if (req.url === '/images/image.png') {
-            setTimeout( () => {
-                const fileStream = fs.createReadStream('./server/data/images/image.png');
-
-                res.setHeader('content-disposition', 'attachment; filename=image.png');
-                fileStream.pipe(res);
-            },
-            15000);
-        }
-
         else {
-            const repositoryRoot = path.resolve(__dirname, '..');
-            const resourcePath   = path.join(repositoryRoot, req.url);
-            const content        = fs.existsSync(resourcePath) ? fs.readFileSync(resourcePath).toString() : '';
-            const contentType    = CONTENT_TYPES[path.extname(resourcePath)];
+            const fileServer = new nStatic.Server('./public');
+            const queryStr       = url.parse(req.url).query;
+            const delay          = parseInt(querystring.parse(queryStr).delay || 0);
 
-            if (contentType)
-                res.setHeader('content-type', contentType);
-
-            res.end(content);
+            setTimeout(() => {
+                fileServer.serve(req, res);
+            }, delay);
         }
     })
     .listen(SERVER_PORT);
