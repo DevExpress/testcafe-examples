@@ -5,10 +5,6 @@ const multiparty = require('multiparty');
 const url         = require('url');
 const querystring = require('querystring');
 
-//
-var nStatic = require('node-static');
-//
-
 const SERVER_PORT = 3000;
 
 const CONTENT_TYPES = {
@@ -55,26 +51,19 @@ http
         }
 
         else {
-            // const repositoryRoot = path.resolve(__dirname, '..');
-            // const resourcePath   = path.join(repositoryRoot, req.url);
-            // const content        = fs.existsSync(resourcePath) ? fs.readFileSync(resourcePath).toString() : '';
-            // const contentType    = CONTENT_TYPES[path.extname(resourcePath)];
-            // const queryStr       = url.parse(req.url).query;
-            // const delay          = parseInt(querystring.parse(queryStr).delay || 0);
-
-            // if (contentType)
-            //     res.setHeader('content-type', contentType);
-
-            // setTimeout(() => {
-            // res.end(content);
-            // }, delay);
-            const fileServer = new nStatic.Server('./public');
+            const repositoryRoot = path.resolve(__dirname, '..');
+            const resourcePath   = path.join(repositoryRoot, req.url);
+            const content        = fs.existsSync(resourcePath) ? fs.readFileSync(resourcePath).toString() : '';
+            const contentType    = CONTENT_TYPES[path.extname(resourcePath)];
             const queryStr       = url.parse(req.url).query;
             const delay          = parseInt(querystring.parse(queryStr).delay || 0);
-
-            setTimeout(() => {
-                fileServer.serve(req, res);
-            }, delay);
+            
+            if (contentType)
+                res.setHeader('content-type', contentType);
+            
+             setTimeout(() => {
+               res.end(content);
+             }, delay);
         }
     })
     .listen(SERVER_PORT);

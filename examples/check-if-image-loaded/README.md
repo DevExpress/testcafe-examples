@@ -1,14 +1,14 @@
-# Check If an Image Has Loaded Without Errors
+# Check If an Image Has Loaded
 
 **Test Code**: [index.js](index.js)
 
 **Tested Page**: [index.html](index.html)
 
-This example shows how to check whether an image on the page has loaded without errors.
+This example shows how to check whether an image on the page has loaded.
 
-The tested page requests an image from the server. The server responds with the image after a timeout specified in the request options.
+The tested page requests an image from the server. The server responds with the image after a specified timeout.
 
-If the image loads without errors, the promise is resolved, otherwise it's rejected.
+If the image loads, the promise is resolved, otherwise it's rejected.
 
 During the test the `t.expect.ok` method checks the promise's status.
 
