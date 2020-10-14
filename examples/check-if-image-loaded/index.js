@@ -1,7 +1,7 @@
 import { ClientFunction } from 'testcafe';
 
 const checkImageIsLoaded = ClientFunction(function() {
-    const img = document.querySelector('img');
+    const img = document.getElementById('img');
 
     return new Promise(function(resolve, reject) {
         img.onload = function() { resolve('Image is loaded successfully.') };
