@@ -51,16 +51,15 @@ http
         }
 
         else {
-            const repositoryRoot = path.resolve(__dirname, '..');
-            const resourcePath   = path.join(repositoryRoot, req.url);
-            const content        = fs.existsSync(resourcePath) ? fs.readFileSync(resourcePath).toString() : '';
-            const contentType    = CONTENT_TYPES[path.extname(resourcePath)];
-            const queryStr       = url.parse(req.url).query;
-            const delay          = parseInt(querystring.parse(queryStr).delay || 0);
-            
+            const parsedUrl    = url.parse(req.url);
+            const resourcePath = path.join(__dirname, parsedUrl.pathname);
+            const content      = fs.existsSync(resourcePath) ? fs.readFileSync(resourcePath) : '';
+            const contentType  = CONTENT_TYPES[path.extname(resourcePath)];
+            const delay        = parseInt(querystring.parse(parsedUrl.query).delay || 0);
+
             if (contentType)
                 res.setHeader('content-type', contentType);
-            
+
              setTimeout(() => {
                res.end(content);
              }, delay);
