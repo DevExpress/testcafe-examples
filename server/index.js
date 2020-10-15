@@ -1,7 +1,7 @@
-const http       = require('http');
-const fs         = require('fs');
-const path       = require('path');
-const multiparty = require('multiparty');
+const http        = require('http');
+const fs          = require('fs');
+const path        = require('path');
+const multiparty  = require('multiparty');
 const url         = require('url');
 const querystring = require('querystring');
 
@@ -60,9 +60,9 @@ http
             if (contentType)
                 res.setHeader('content-type', contentType);
 
-             setTimeout(() => {
-               res.end(content);
-             }, delay);
+            setTimeout(() => {
+                res.end(content);
+            }, delay);
         }
     })
     .listen(SERVER_PORT);
