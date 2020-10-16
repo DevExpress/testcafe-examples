@@ -4,8 +4,15 @@ const checkImageIsLoaded = ClientFunction(function() {
     const img = document.getElementById('img');
 
     return new Promise(function(resolve, reject) {
-        img.onload = function() { resolve('Image is loaded successfully.'); };
-        img.onerror = function() { reject('Error while loading image.'); };
+        if (img.complete)
+            resolve('Image is already loaded or rejected.');
+
+        img.addEventListener('load', function () {
+            resolve('Image is loaded successfully.');
+        });
+        img.addEventListener('error', function () {
+            reject('Error while loading image.');
+        });
     });
 });
 

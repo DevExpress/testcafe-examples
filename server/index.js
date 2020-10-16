@@ -16,10 +16,22 @@ const CONTENT_TYPES = {
     '.pdf':  'application/pdf'
 };
 
+function isBinaryResource (contentType) {
+    if(contentType === CONTENT_TYPES[".png"])
+        return true;
+
+    return false;
+}
+
+function stringifyContentIfNecessary (content, contentType) {
+    if (!content)
+        return content;
+
+    return isBinaryResource(contentType) ? content : content.toString();
+}
+
 http
     .createServer((req, res) => {
-        console.log(req.url);
-
         if (req.url === '/download-file') {
             const fileStream = fs.createReadStream('./server/data/text-file.txt');
 
@@ -51,11 +63,14 @@ http
         }
 
         else {
-            const parsedUrl    = url.parse(req.url);
-            const resourcePath = path.join(__dirname, parsedUrl.pathname);
-            const content      = fs.existsSync(resourcePath) ? fs.readFileSync(resourcePath) : '';
-            const contentType  = CONTENT_TYPES[path.extname(resourcePath)];
-            const delay        = parseInt(querystring.parse(parsedUrl.query).delay || 0);
+            const repositoryRoot = path.resolve(__dirname, '..');
+            const parsedUrl      = url.parse(req.url);
+            const resourcePath   = path.join(repositoryRoot, parsedUrl.pathname);
+            let content          = fs.existsSync(resourcePath) ? fs.readFileSync(resourcePath) : void 0;
+            const contentType    = CONTENT_TYPES[path.extname(resourcePath)];
+            const delay          = parseInt(querystring.parse(parsedUrl.query).delay || 0);
+
+            content = stringifyContentIfNecessary(content, contentType);
 
             if (contentType)
                 res.setHeader('content-type', contentType);
