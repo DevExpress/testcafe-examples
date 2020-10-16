@@ -1,10 +1,10 @@
-# Web Page Going to the Background
+# Simulate the Web Page Losing Focus
 
 **Test Code**: [index.js](index.js)
 
 **Tested Page**: [index.html](index.html)
 
-This example demonstrates how to simulate the web page going to the background.
+This example demonstrates how to simulate the web page losing focus.
 
 The tested page includes a script. When the user switches to another tab or minimizes the main window, the script logs a message to the console.
 
