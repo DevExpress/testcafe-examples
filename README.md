@@ -74,3 +74,4 @@ The repository includes the following examples:
 Below are the examples that run in Chrome or Firefox only or require additional launch arguments. You should launch these examples separately.
 
 * [Mock Camera/Microphone Access](detached-examples/mock-camera-microphone-access)
+* [Extended Client-Side Error Tracking](detached-examples/extended-error-tracking)
