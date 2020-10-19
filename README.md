@@ -70,6 +70,7 @@ The repository includes the following examples:
 * [Wait Until an Element Property Has a Specific Value](examples/wait-for-element-property-value)
 * [Wait For File Download](examples/wait-for-file-download)
 * [Access Element Properties](examples/element-properties)
+* [Set a Custom Referrer](examples/set-a-custom-referrer)
 
 Below are the examples that run in Chrome or Firefox only or require additional launch arguments. You should launch these examples separately.
 
