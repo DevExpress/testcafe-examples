@@ -36,6 +36,7 @@ command
   * [t.typeText](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/typetext.html) Method
   * [t.click](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/click.html) Method
   * [t.wait](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/wait.html) Method
+  * [t.navigateTo](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/navigateto.html) Method
   * [Selector.withExactText](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/withexacttext.html) Method
   * [Selector.withText](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/withtext.html) Method
   * [Selector.parent](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/parent.html) Method
@@ -57,5 +58,8 @@ command
   * [ClientFunction](https://devexpress.github.io/testcafe/documentation/reference/test-api/clientfunction/) Object
 * Request Handlers:
   * [Fixture.requestHooks](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/requesthooks.html) Method
+  * [Test.requestHooks](https://devexpress.github.io/testcafe/documentation/reference/test-api/test/requesthooks.html) Method
+  * [RequestHook](https://devexpress.github.io/testcafe/documentation/reference/test-api/requesthook/constructor.html) Constructor
+  * [RequestLogger](https://devexpress.github.io/testcafe/documentation/reference/test-api/requestlogger/constructor.html) Constructor
 * Command Line Interface Options:
   * (list of items w/ links)
