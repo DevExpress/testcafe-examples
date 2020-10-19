@@ -62,4 +62,4 @@ command
   * [RequestHook](https://devexpress.github.io/testcafe/documentation/reference/test-api/requesthook/constructor.html) Constructor
   * [RequestLogger](https://devexpress.github.io/testcafe/documentation/reference/test-api/requestlogger/constructor.html) Constructor
 * Command Line Interface Options:
-  * (list of items w/ links)
+  * [`-e`](https://devexpress.github.io/testcafe/documentation/reference/command-line-interface.html#-e---skip-js-errors)
