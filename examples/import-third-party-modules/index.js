@@ -1,5 +1,5 @@
 import { Selector } from 'testcafe';
-import nanoid from 'nanoid';
+import { nanoid } from 'nanoid';
 
 fixture `Import third-party modules`
     .page `https://devexpress.github.io/testcafe/example/`;
