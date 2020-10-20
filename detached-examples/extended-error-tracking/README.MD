@@ -29,27 +29,18 @@ npm run extended-error-tracking
 
 > When a JavaScript error occurs on a tested web page, TestCafe stops test execution. To prevent this, the `-e` [CLI option](https://devexpress.github.io/testcafe/documentation/reference/command-line-interface.html#-e---skip-js-errors) is used in this example.
 
-## TestCafe Functions and Methods Used in This Example
+## TestCafe API Used in This Example
 
-1. Test Structure:
-
-   - [`fixture` Function](https://devexpress.github.io/testcafe/documentation/reference/test-api/global/fixture.html)
-   - [`fixture.page` Method](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html)
-   - [`test` Function](https://devexpress.github.io/testcafe/documentation/reference/test-api/global/test.html)
-
-2. Actions:
-
-   - [`t.click` Method](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/click.html)
-
-3. Assertion and Evaluation:
-
-   - [`t.eval` Method](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/eval.html)
-   - [`t.expect.notOk` Method](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/notok.html)
-
-4. Custom Scripts:
-
-   - [`Test.clientScripts` Method](https://devexpress.github.io/testcafe/documentation/reference/test-api/test/clientscripts.html)
-
-5. Command Line Interface Options:
-
-   - [`-e`](https://devexpress.github.io/testcafe/documentation/reference/command-line-interface.html#-e---skip-js-errors)
+* Test Structure:
+  * [`fixture` Function](https://devexpress.github.io/testcafe/documentation/reference/test-api/global/fixture.html)
+  * [`fixture.page` Method](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html)
+  * [`test` Function](https://devexpress.github.io/testcafe/documentation/reference/test-api/global/test.html)
+* Element Identification and Actions:
+  * [`t.click` Method](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/click.html)
+* Assertion and Evaluation:
+  * [`t.eval` Method](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/eval.html)
+  * [`t.expect.notOk` Method](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/notok.html)
+* Custom Scripts:
+  * [`Test.clientScripts` Method](https://devexpress.github.io/testcafe/documentation/reference/test-api/test/clientscripts.html)
+* Command Line Interface Options:
+  * [`-e`](https://devexpress.github.io/testcafe/documentation/reference/command-line-interface.html#-e---skip-js-errors)

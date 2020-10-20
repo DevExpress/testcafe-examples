@@ -28,4 +28,3 @@ test('Submit a developer name and check the header', async t => {
 
     await t.expect(header.innerText).eql('Thank you, Peter!');
 });
-
