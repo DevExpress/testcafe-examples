@@ -1,4 +1,4 @@
-import { RequestLogger, RequestHook } from "testcafe";
+import { RequestLogger, RequestHook } from 'testcafe';
 
 fixture `Set a Custom Referer`
     .page`http://example.com/`;
@@ -8,24 +8,28 @@ export class MyRequestHook extends RequestHook {
         super(requestFilterRules, responseEventConfigureOpts);
     }
     async onRequest(event) {
-        event.requestOptions.headers["Referer"] =
-            "http://my-modified-referer.com";
+        event.requestOptions.headers['Referer'] =
+            'http://my-modified-referer.com';
     }
+
     async onResponse(event) {
 
     }
 }
 
-const hook = new MyRequestHook();
-const logger = RequestLogger("http://example.com/", {
-    logRequestHeaders: true,
-});
+const hook   = new MyRequestHook();
+const logger = RequestLogger(
+    ["https://devexpress.github.io/testcafe/example/", "http://example.com/"],
+    {
+        logRequestHeaders: true,
+    }
+);
 
-test.requestHooks(hook, logger)("Check the Referer Value", async t => {
-    const requestHeaders = logger.requests[0].request.headers
-
-    await t
-        .navigateTo("https://devexpress.github.io/testcafe/example/")
-        .expect(requestHeaders["Referer"])
-        .eql("http://my-modified-referer.com");
-});
+test
+    .requestHooks([hook, logger])
+    ('Check the Referer Value', async t => {
+        await t
+            .navigateTo('https://devexpress.github.io/testcafe/example/')
+            .expect(logger.contains(r => r.request.url === 'https://devexpress.github.io/testcafe/example/')).ok()
+            .expect(logger.requests[0].request.headers['Referer']).eql('http://my-modified-referer.com');
+    });
