@@ -21,3 +21,4 @@ During the test, the `t.expect.ok` method waits for the promise to resolve and c
   * [t.expect.ok](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/ok.html) Method
 * Custom Scripts:
   * [ClientFunction](https://devexpress.github.io/testcafe/documentation/reference/test-api/clientfunction/) Object
+  
