@@ -4,13 +4,13 @@
 
 **Tested Page**: [TestCafe Example Page](https://devexpress.github.io/testcafe/example/)
 
-The [HTTP referrer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) (otherwise known as referer) is a request header that indicates from where the user navigated.
+The [HTTP referrer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) (also known as referer) is a request header that indicates from where the user navigated.
 
 This example shows how to set a custom referrer for the specified requests during tests.
 
-Before the test begins a request hook and a request logger are created. When the browser sends a request, the hook overwrites its 'Referer' header with the desired value.
+Before the test begins, a request hook and a request logger are created. When the browser sends a request, the hook overwrites its 'Referer' header with the specified value.
 
-The test starts on a dummy page and navigates to another page with the `t.navigateTo` method. The request logger records the requests sent during the test. To verify that the referrer was overwritten, the `t.expect.eql` method checks the header value.
+The test starts on a dummy page and navigates to another page with the `t.navigateTo` method. The request logger records the requests sent during the test. The `t.expect.eql` method checks the header value to verify that the referrer was overwritten.
 
 ## TestCafe API Used in This Example
 
