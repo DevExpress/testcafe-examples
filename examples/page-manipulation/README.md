@@ -1,4 +1,4 @@
-## Page Manipulation
+# Page Manipulation
 
 TestCafe allows you to [execute custom code](https://devexpress.github.io/testcafe/documentation/test-api/obtaining-data-from-the-client/) on tested pages. This code can use the DOM or browser API to obtain data or manipulate the page state.
 
