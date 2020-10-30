@@ -43,6 +43,7 @@ command
   * [Selector.child](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/child.html) Method
   * [Selector.nth](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/nth.html) Method
   * [Selector.getStyleProperty](https://devexpress.github.io/testcafe/documentation/reference/test-api/domnodestate.html) Method
+  * [Selector.find](https://devexpress.github.io/testcafe/documentation/reference/test-api/selector/find.html) Method.
 * Assertion and Evaluation:
   * [t.eval](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/eval.html) Method
   * [t.expect.eql](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/eql.html) Method
