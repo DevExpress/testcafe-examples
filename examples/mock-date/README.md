@@ -2,7 +2,7 @@
 
 **Test Code**: [index.js](index.js)
 
-[`mockdate`](https://www.npmjs.com/package/mockdate) is an npm module that allows you to substitute the current date.
+[`mockdate`](https://www.npmjs.com/package/mockdate) is an npm module that allows you to substitute the current date. Note: you must use `mockdate@^2.0.5` as `mockdate@3.0.3` does not work in the browser https://github.com/DevExpress/testcafe-examples/issues/49
 
 Use the `clientScripts` function to inject the `mockdate` module and add the code that uses this module to set the browser date.
 
