@@ -2,6 +2,12 @@
 
 **Test Code**: [index.js](index.js)  
 
+> UPDATE: TestCafe v1.14 release adds scroll actions to the test controller. There is no need to use client functions or `hover` to scroll the webpage. Read the documentation for details:
+>
+> * [t.scroll](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/scroll.html)
+> * [t.scrollBy](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/scrollby.html)
+> * [t.scrollIntoView](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/scrollintoview.html)
+
 TestCafe [actions](https://devexpress.github.io/testcafe/documentation/guides/basic-guides/interact-with-the-page.html) have a built-in scrolling mechanism. In rare cases, you may need to scroll the page manually. This example demonstrates two common ways to do this: a `hover` action and a [ClientFunction](https://devexpress.github.io/testcafe/documentation/guides/basic-guides/obtain-client-side-info.html)
 
 The test page has two buttons. They are located at 2000 px and 4000 px along the X-axis, respectively (both outside of the viewport).
