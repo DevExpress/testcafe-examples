@@ -2,7 +2,7 @@
 
 **Test Code**: [index.js](index.js)  
 
-> UPDATE: TestCafe v1.14 includes dedicated scroll actions. You do not need to interact with off-screen elements, or execute client-side code to scroll the webpage. Read the documentation for details:
+> UPDATE: TestCafe v1.14 includes dedicated scroll actions. You do not need to interact with off-screen elements or execute client-side code to scroll the webpage. Read the documentation for details:
 >
 > * [t.scroll](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/scroll.html)
 > * [t.scrollBy](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/scrollby.html)
@@ -10,7 +10,7 @@
 
 TestCafe [actions](https://devexpress.github.io/testcafe/documentation/guides/basic-guides/interact-with-the-page.html) have a built-in scrolling mechanism. In rare cases, you may need to scroll the page manually. This example demonstrates two common ways to do this: a `hover` action and a [ClientFunction](https://devexpress.github.io/testcafe/documentation/guides/basic-guides/obtain-client-side-info.html)
 
-The test page has two buttons. They are located at 2000 px and 4000 px along the X-axis, respectively (both outside of the viewport).
+The test page has two buttons. They are located at 2000 px and 4000 px along the X-axis, respectively (outside of the viewport).
 
 The `index.js` file includes 2 tests.
 
