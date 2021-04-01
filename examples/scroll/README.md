@@ -31,4 +31,4 @@ The second test introduces two custom Client Functions that scroll the page:
     | Parameter  | Description |
     |------------|-------------|
     | `x` | the number of pixels by which the page is scrolled horizontally|
-    | `y`  | the number of pixels by which the page is scrolled vertically.|
+    | `y`  | the number of pixels by which the page is scrolled vertically|
