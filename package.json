@@ -15,13 +15,9 @@
   "scripts": {
     "examples": "testcafe chrome,firefox examples -a \"node server/index.js\"",
     "mock-camera-microphone-access": " testcafe --hostname localhost \"chrome --use-fake-ui-for-media-stream --use-fake-device-for-media-stream\" detached-examples/mock-camera-microphone-access/mock-camera-microphone-access.js",
-    "test": "npm run examples && npm run mock-camera-microphone-access",
-    "lint": "gulp lint"
+    "test": "npm run examples && npm run mock-camera-microphone-access"
   },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "gulp": "^4.0.2",
-    "gulp-eslint": "^6.0.0",
     "mockdate": "^2.0.5",
     "multiparty": "^4.2.2"
   }
