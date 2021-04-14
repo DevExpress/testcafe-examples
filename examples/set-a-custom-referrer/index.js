@@ -12,8 +12,8 @@ export class MyRequestHook extends RequestHook {
             'http://my-modified-referer.com';
     }
 
-    async onResponse (event) {
-
+    async onResponse () {
+        
     }
 }
 

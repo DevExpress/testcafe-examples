@@ -25,12 +25,12 @@ fixture `Wait for file download`
     .page('./index.html');
 
 test
-    .before(async t => {
+    .before(async () => {
         downloadedFilePath = getFileDownloadPath();
 
         if (fs.existsSync(downloadedFilePath))
             fs.unlinkSync(downloadedFilePath);
-    })('File Download', async t => {
+    })('File Download', async () => {
         // Run this test only with the Google Chrome browser to simplify the searching of the downloaded file.
         if (t.browser.name !== 'Chrome')
             return;
