@@ -5,7 +5,7 @@ fixture `My fixture`
 
 test('Check uploaded files', async t => {
     const uploadedFileElements = Selector('#uploaded-file-list').child('li');
-
+    
     await t
         .setFilesToUpload('#upload-input', [
             './uploads/text-file-1.txt',
