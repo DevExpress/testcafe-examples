@@ -1,4 +1,4 @@
-# Create Data-Driven Tests
+# Fire a Mouse Event
 
 **Test Code**: [index.js](index.js)
 

@@ -10,29 +10,27 @@
 
 <body>
     <p id="target">Waiting for an event...</p>
-
     <p> Event type: <span id="eventType"></span></p>
-
     <p>Is cancelable: <span id="isCancelable"></span></p>
-
     <p>Bubbles: <span id="isBubbling"></span></p>
-    
 </body>
-<script defer>
+
+<script>
     const target       = document.getElementById('target');
     const eventType    = document.getElementById('eventType');
     const isCancelable = document.getElementById('isCancelable');
     const isBubbling   = document.getElementById('isBubbling');
 
-    window.addEventListener('touchstart', (e) => {
+    window.addEventListener('touchstart', e => {
         target.innerText       = 'Event triggered!';
         eventType.innerText    = Object.getPrototypeOf(e)[Symbol.toStringTag];
         isCancelable.innerText = !!e.cancelable;
         isBubbling.innerText   = !!e.bubbles;
     });
-    const event = new TouchEvent('touchstart');
-    window.dispatchEvent(event);
 
+    const event = new TouchEvent('touchstart');
+    
+    window.dispatchEvent(event);
 </script>
 
 </html>
