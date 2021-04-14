@@ -1,9 +1,9 @@
 import { ClientFunction } from 'testcafe';
 
-const checkImageIsLoaded = ClientFunction(function () {
+const checkImageIsLoaded = ClientFunction(function() {
     const img = document.getElementById('img');
 
-    return new Promise(function (resolve, reject) {
+    return new Promise(function(resolve, reject) {
         if (img.complete)
             resolve('Image is already loaded or rejected.');
 

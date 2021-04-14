@@ -1,6 +1,6 @@
 import { Selector } from 'testcafe';
 
-const mockGeolocationScript = 'navigator.geolocation.getCurrentPosition = success =>  success({ coords: { latitude: 30, longitude: -105, }, timestamp: Date.now() });';
+const mockGeolocationScript = `navigator.geolocation.getCurrentPosition = success =>  success({ coords: { latitude: 30, longitude: -105, }, timestamp: Date.now() });`;
 
 fixture `Mock geolocation`
     .page('./index.html')

@@ -4,7 +4,7 @@ fixture`Mock microphone/camera access`
     .page('./index.html');
 
 test('take a photo', async t => {
-    const photoButton = Selector('#photoButton');
+    const photoButton = Selector('#photoButton')
     const photoFrame  = Selector('#photo').addCustomDOMProperties({
         src: el => el.src
     });

@@ -8,7 +8,7 @@ test('Check employees', async t => {
     const dataRows     = table.find('tbody > tr');
     const dataRowCount = await dataRows.count;
 
-    for (let i = 0; i < dataRowCount; i++) {
+    for(let i = 0; i < dataRowCount; i++) {
         const currentRow   = dataRows.nth(i);
         const fullNameCell = currentRow.child('td').nth(1);
         const isEvenRow    = !(i % 2);

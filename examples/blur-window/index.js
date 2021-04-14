@@ -4,7 +4,7 @@ const blurWindow = ClientFunction(() => {
     var blur = new Event('blur');
 
     return window.dispatchEvent(blur);
-});
+})
 
 fixture `The web page in the background`
     .page `./index.html`;

@@ -8,5 +8,5 @@ const getStyleWidthInPercents = ClientFunction(() => {
 });
 
 test('Element width', async t => {
-    await t.expect(getStyleWidthInPercents()).eql('100%', { timeout: 30000 });
+    await t.expect(getStyleWidthInPercents()).eql('100%', { timeout: 30000 })
 });

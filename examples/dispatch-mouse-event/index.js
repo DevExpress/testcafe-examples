@@ -9,11 +9,11 @@ test('Hold a left-click on a button for 5 seconds', async t => {
 
     const MOUSE_OPTIONS = {
         buttons: 2
-    };
+    }
 
     await t
         .dispatchEvent(target, 'mousedown', MOUSE_OPTIONS)
         .wait(5000)
         .dispatchEvent(target, 'mouseup', MOUSE_OPTIONS)
-        .expect(timer.innerText).eql('5');
+        .expect(timer.innerText).eql('5')
 });

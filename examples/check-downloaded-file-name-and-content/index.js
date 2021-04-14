@@ -3,9 +3,9 @@ import { RequestLogger } from 'testcafe';
 const url = 'http://localhost:3000/download-file';
 
 const logger = RequestLogger({ url, method: 'GET' }, {
-    logResponseHeaders:    true,
-    logResponseBody:       true,
-    stringifyResponseBody: true
+    logResponseHeaders:     true,
+    logResponseBody:        true,
+    stringifyResponseBody:  true
 });
 
 fixture `Download file`
@@ -31,12 +31,12 @@ test('Check file name and content', async t => {
             if (!downloadedFileName)
                 false;
       
-            if (!fileNameRegEx.test(downloadedFileName))
-                return false;
+             if (!fileNameRegEx.test(downloadedFileName))
+                  return false;
             
-            const downloadedFileContent = logger.requests[0].response.body;
+             const downloadedFileContent = logger.requests[0].response.body;
       
-            return downloadedFileContent === 'Test content';
-        })).ok();
+             return downloadedFileContent  === 'Test content';
+      })).ok();
 });
  

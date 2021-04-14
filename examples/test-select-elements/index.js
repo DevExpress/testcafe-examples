@@ -6,7 +6,7 @@ fixture `Select element manipulation`
 const citySelect = Selector('#city');
 const cityOption = citySelect.find('option');
 
-test('Select an option from the drop-down menu', async t => {
+test(`Select an option from the drop-down menu`, async t => {
     await t
         .click(citySelect)
         .click(cityOption.withText('London'))

@@ -11,7 +11,7 @@ const getFullFilePath = path => {
     return pathToFileURL(resolvedPath).href;
 };
 
-fixture `Pass parameters to tests`;
+fixture `Pass parameters to tests`
 
 //set an environment variable
 process.env.url = './src/env.html';
@@ -19,14 +19,14 @@ process.env.url = './src/env.html';
 test('Navigate to URL from an environment variable', async t => {
     await t.expect(getDocumentUri()).eql(getFullFilePath(process.env.url));
 })
-    .page(process.env.url);
+.page(process.env.url);
 
 test('Navigate to URL from .js configuration file', async t => {
     await t.expect(getDocumentUri()).eql(getFullFilePath(JSconfig.url));
 })
-    .page(JSconfig.url);
+.page(JSconfig.url);
 
 test('Navigate to URL from JSON configuration file', async t => {
     await t.expect(getDocumentUri()).eql(getFullFilePath(JSONconfig.url));
 })
-    .page(JSONconfig.url);
+.page(JSONconfig.url);

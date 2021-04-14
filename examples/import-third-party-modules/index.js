@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid';
 fixture `Import third-party modules`
     .page `https://devexpress.github.io/testcafe/example/`;
 
-test('Enter random user name', async t => {
+test(`Enter random user name`, async t => {
     const randomName = 'testuser_' + nanoid();
     const nameInput  = Selector('#developer-name');
 
