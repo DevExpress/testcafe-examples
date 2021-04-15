@@ -1,7 +1,7 @@
 import { t } from 'testcafe';
 
 import fs from 'fs';
-import path from 'path';
+import { join as joinPath } from 'path';
 import os from 'os';
 
 async function waitForFileDownload (path) {
@@ -16,7 +16,7 @@ async function waitForFileDownload (path) {
 }
 
 function getFileDownloadPath () {
-    return path.join(os.homedir(), 'Downloads', 'text-file.txt');
+    return joinPath(os.homedir(), 'Downloads', 'text-file.txt');
 }
 
 let downloadedFilePath = null;
@@ -37,5 +37,5 @@ test
 
         await t.click('a');
 
-        await waitForFileDownload(path);
+        await waitForFileDownload(downloadedFilePath);
     });
