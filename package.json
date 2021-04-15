@@ -16,7 +16,7 @@
     "examples": "testcafe chrome examples -a \"node server/index.js\"",
     "mock-camera-microphone-access": " testcafe --hostname localhost \"chrome --use-fake-ui-for-media-stream --use-fake-device-for-media-stream\" detached-examples/mock-camera-microphone-access/mock-camera-microphone-access.js",
     "test": "npm run lint & npm run examples && npm run mock-camera-microphone-access",
-    "lint": "eslint --ext .js --ignore-path .gitignore ."
+    "lint": "eslint \"*(detached-)examples/**/*.js\""
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
