@@ -6,9 +6,9 @@
 
 This example shows how to fire [events](https://developer.mozilla.org/en-US/docs/Web/API/Event) on the webpage with TestCafe.
 
-The tested page includes a `button` and a counter. Each second that the left click is held on the button the counter increments by one.
-
 During the test the `t.dispatchEvent` fires a [mousedown event](https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event) on the button and then the [mouseup event](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event) in five seconds. This simulates a 5 second-long left click on the button.
+
+The tested page includes a `button` and a counter. Each second that the left click is held on the button the counter increments by one.
 
 When `mouseup` fires (the left click is released), the `t.expect.eql` method checks the counter value.
 
