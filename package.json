@@ -16,7 +16,8 @@
     "examples": "testcafe chrome examples -a \"node server/index.js\"",
     "mock-camera-microphone-access": " testcafe --hostname localhost \"chrome --use-fake-ui-for-media-stream --use-fake-device-for-media-stream\" detached-examples/mock-camera-microphone-access/mock-camera-microphone-access.js",
     "test": "npm run lint & npm run examples && npm run mock-camera-microphone-access",
-    "lint": "eslint examples/**/*.js detached-examples/**/*.js"
+    "lint": "eslint examples/**/*.js detached-examples/**/*.js",
+    "lint:fix": "eslint --fix examples/**/*.js detached-examples/**/*.js"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
