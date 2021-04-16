@@ -14,8 +14,7 @@ const mock = RequestMock()
 fixture `Delay mocked response`
     .page `http://localhost:3000/examples/delay-mocked-response/index.html`;
 
-test.requestHooks(mock)
-('Check that the mocked response was delayed', async (t) => {
+test.requestHooks(mock)('Check that the mocked response was delayed', async (t) => {
     await t
         .click('#send-request')
         .expect(Selector('#response').textContent)
