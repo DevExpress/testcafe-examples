@@ -1,8 +1,8 @@
 import { t } from 'testcafe';
 
 import fs from 'fs';
-import path from "path";
-import os from "os";
+import { join as joinPath } from 'path';
+import os from 'os';
 
 async function waitForFileDownload (path) {
     for (let i = 0; i < 10; i++) {
@@ -16,7 +16,7 @@ async function waitForFileDownload (path) {
 }
 
 function getFileDownloadPath () {
-    return path.join(os.homedir(), 'Downloads', 'text-file.txt');
+    return joinPath(os.homedir(), 'Downloads', 'text-file.txt');
 }
 
 let downloadedFilePath = null;
@@ -25,18 +25,17 @@ fixture `Wait for file download`
     .page('./index.html');
 
 test
-    .before(async t => {
+    .before(async () => {
         downloadedFilePath = getFileDownloadPath();
 
         if (fs.existsSync(downloadedFilePath))
             fs.unlinkSync(downloadedFilePath);
-    })
-    ('File Download', async t => {
+    })('File Download', async () => {
         // Run this test only with the Google Chrome browser to simplify the searching of the downloaded file.
         if (t.browser.name !== 'Chrome')
             return;
 
         await t.click('a');
 
-        await waitForFileDownload(path);
+        await waitForFileDownload(downloadedFilePath);
     });

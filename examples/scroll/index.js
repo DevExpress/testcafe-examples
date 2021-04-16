@@ -27,7 +27,7 @@ test('Scroll with an action', async t => {
     await t.hover(btn1);
 });
 
-test('Scroll with a ClientFunction', async t => {
+test('Scroll with a ClientFunction', async () => {
     await scrollToElement(btn2, 250, 0);
     await scrollBy(2000, 0);
 });

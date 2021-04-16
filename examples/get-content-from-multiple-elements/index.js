@@ -11,7 +11,7 @@ test('Get text from all items in the <ul> list', async t => {
 
     const nodeCount = await liElementsSelector.count;
 
-    for (let i = 0; i < nodeCount; i++) {
+    for (let i = 0; i < nodeCount; i++) 
         await t.expect(liElementsSelector.nth(i).textContent).eql(expectedContent[i]);
-    }
+    
 });

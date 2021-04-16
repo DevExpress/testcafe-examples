@@ -17,7 +17,7 @@ const CONTENT_TYPES = {
 };
 
 function isBinaryResource (contentType) {
-    if(contentType === CONTENT_TYPES[".png"])
+    if (contentType === CONTENT_TYPES['.png'])
         return true;
 
     return false;
@@ -46,7 +46,8 @@ http
                 res.setHeader('content-type', CONTENT_TYPES['.html']);
 
                 const uploadedFilesHtml = filesData.files.reduce((html, file) => {
-                    return html += `<li>${file.originalFilename}</li>\n`;
+                    html += `<li>${file.originalFilename}</li>\n`;
+                    return html;
                 }, '');
 
                 const resultHtml = `
@@ -68,7 +69,7 @@ http
             const resourcePath   = path.join(repositoryRoot, parsedUrl.pathname);
             let content          = fs.existsSync(resourcePath) ? fs.readFileSync(resourcePath) : void 0;
             const contentType    = CONTENT_TYPES[path.extname(resourcePath)];
-            const delay          = parseInt(querystring.parse(parsedUrl.query).delay || 0);
+            const delay          = parseInt(querystring.parse(parsedUrl.query).delay || 0, 10);
 
             content = stringifyContentIfNecessary(content, contentType);
 
