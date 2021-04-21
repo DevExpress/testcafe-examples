@@ -1,26 +1,25 @@
 # Fire a Custom Event
 
-**Test Code**: [index.js](index.js)
+**Test Source**: [index.js](index.js)
 
-**Tested Page**: [index.html](index.html)
+**Page Source**: [index.html](index.html)
 
-This example shows how to fire [events](https://developer.mozilla.org/en-US/docs/Web/API/Event) on the webpage with TestCafe.
+This example shows how to fire DOM [events](https://developer.mozilla.org/en-US/docs/Web/API/Event) with TestCafe.
 
-During the test the `t.dispatchEvent` fires a `touchstart` event on the target.
+We use the `t.dispatchEvent` method to fire a `touchstart` event.
 
-When a [touchstart event](https://developer.mozilla.org/en-US/docs/Web/Events/touchstart) is triggered on a target item, the page dislays the event's information:
+The page displays the following information when we trigger a [touchstart event](https://developer.mozilla.org/en-US/docs/Web/Events/touchstart):
 
-* event's constructor
+* the event's constructor
 * whether the event is [cancelable](https://developer.mozilla.org/en-US/docs/Web/API/Event/cancelable)
 * whether the event [bubbles](https://developer.mozilla.org/en-US/docs/Web/API/Event/bubbles)  
 
-TestCafe invokes the [CustomEvent Constructor](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent) for any event that is neither a [Mouse](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/dispatchevent.html#mouse-events), a [Keyboard](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/dispatchevent.html#keyboard-events), an [Input](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/dispatchevent.html#input-events), a [Focus](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/dispatchevent.html#focus-events) nor a [Pointer](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/dispatchevent.html#pointer-events) event.
+TestCafe invokes the [CustomEvent Constructor](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent) to create events, unless the event in question is a [Mouse event](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/dispatchevent.html#mouse-events), a [Keyboard event](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/dispatchevent.html#keyboard-events), an [Input event](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/dispatchevent.html#input-events), a [Focus event](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/dispatchevent.html#focus-events) or a [Pointer event](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/dispatchevent.html#pointer-events).
 
-To tell TestCafe to use the [TouchEvent Constructor](https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/TouchEvent), the `eventConstructor` property is passed to the method's `options`.
+Include the `eventConstructor` option to use the [TouchEvent Constructor](https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/TouchEvent) instead.```
 
-When `touchstart` fires, the `t.expect.eql` method checks the values displayed on the page.
 
-## TestCafe API Used in This Example
+## TestCafe API methods Used in This Example
 
 * Test Structure:
   * [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method

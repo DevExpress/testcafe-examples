@@ -1,18 +1,18 @@
 # Fire a Mouse Event
 
-**Test Code**: [index.js](index.js)
+**Test Source**: [index.js](index.js)
 
-**Tested Page**: [index.html](index.html)
+**Page Source**: [index.html](index.html)
 
-This example shows how to fire [events](https://developer.mozilla.org/en-US/docs/Web/API/Event) on the webpage with TestCafe.
+This example shows how to fire mouse [events](https://developer.mozilla.org/en-US/docs/Web/API/Event) with TestCafe.
 
-During the test the `t.dispatchEvent` fires a [mousedown event](https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event) on the button and then the [mouseup event](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event) in five seconds. This simulates a 5 second-long left click on the button.
+The `t.dispatchEvent` method fires a [mousedown event](https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event), waits for five seconds, and then fires a [mouseup event](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event). This simulates a five second-long left click.
 
-The tested page includes a `button` and a counter. Each second that the left click is held on the button the counter increments by one.
+The page includes a button and a counter. For each second that you hold the button, the value of the counter increases by one.
 
-When `mouseup` fires (the left click is released), the `t.expect.eql` method checks the counter value.
+When the left click is released, the `t.expect.eql` method checks the counter value.
 
-## TestCafe API Used in This Example
+## TestCafe API Methods Used in This Example
 
 * Test Structure:
   * [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method
