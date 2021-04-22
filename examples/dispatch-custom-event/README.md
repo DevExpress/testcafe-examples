@@ -19,7 +19,7 @@ TestCafe invokes the [CustomEvent Constructor](https://developer.mozilla.org/en-
 Include the `eventConstructor` option to use the [TouchEvent Constructor](https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/TouchEvent) instead.```
 
 
-## TestCafe API methods Used in This Example
+## TestCafe API Methods Used in This Example
 
 * Test Structure:
   * [Fixture.page](https://devexpress.github.io/testcafe/documentation/reference/test-api/fixture/page.html) Method
