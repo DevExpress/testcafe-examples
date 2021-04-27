@@ -1,0 +1,19 @@
+{
+  "name": "sync-multi-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "testcafe": "^1.14.0",
+    "ws": "^7.4.5"
+  }
+}
