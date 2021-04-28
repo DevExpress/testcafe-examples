@@ -1,25 +1,27 @@
 const createTestCafe = require('testcafe');
-
-const scenario = 'An example of synchronizing two tests';
-
-async function runTest (port1, port2, fileName, browsers) {
-    const testcafe = await createTestCafe('localhost', port1, port2);
-    const runner   = testcafe.createRunner();
-
-    await runner
-        .src(fileName)
-        .browsers(browsers)
-        .run();
-
-    return testcafe.close();
-}
+const { Scenario }   = require('./scenario');
 
 require('../index').then(async () => {
+    const scenario = new Scenario('An example of synchronizing multiple tests');
 
-    await Promise.all([
-        runTest(1337, 1338, 'test/first-test.js', 'firefox'),
-        runTest(1339, 1340, 'test/second-test.js', 'chrome --incognito')
+    const [user1, user2] = await Promise.all([
+        scenario.createUser('First user', 'test/first-test.js', 'chrome'),
+        scenario.createUser('Second user', 'test/second-test.js', 'chrome --incognito')
     ]);
 
-    process.exit();
+    await Promise.all([
+        user1.runStage('Check page load'),
+        user2.runStage('Check page load')
+    ]);
+
+    await user1.runStage('Type a color and send it');
+    await user1.runStage('Check result');
+
+    await user2.runStage('Type a color and send it');
+    await user2.runStage('Check result');
+
+    user1.runStage('End');
+    user2.runStage('End');
+
+    setTimeout(() => process.exit(), 1000);
 });

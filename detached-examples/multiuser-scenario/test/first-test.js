@@ -1,24 +1,30 @@
 const { Selector } = require('testcafe');
-console.log(__filename)
-const createStageGenerator = require('./create-stage-generator');
 
-fixture`First user`
+const { getScenario } = require('./scenario');
+
+const scenario = getScenario('An example of synchronizing multiple tests');
+const stage    = scenario.initUser('First user');
+
+fixture`First fixture`
     .page('http://localhost:3000');
 
 const input = Selector('input');
 const h1    = Selector('h1');
 
 test('test', async t => {
-    const stage = await createStageGenerator('An example of synchronizing two tests', 'First user');
+    await stage('Check page load');
 
     await t.expect(input.exists).ok();
 
-    await stage('Choose a color and send it');
+    await stage('Type a color and send it');
 
     await t
         .typeText(input, 'red')
-        .pressKey('enter')
-        .expect(h1.innerText).eql('Ok!');
+        .pressKey('enter');
+
+    await stage('Check result');
+
+    await t.expect(h1.innerText).eql('Ok!');
 
     await stage('End');
 });
