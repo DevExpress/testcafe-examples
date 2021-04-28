@@ -1,5 +1,7 @@
 const createTestCafe = require('testcafe');
 
+const users = new Map();
+
 class User {
     constructor (name, fileName, browser) {
         this.name     = name;
@@ -25,7 +27,7 @@ class User {
             .browsers(this.browser)
             .run();
 
-        testcafe.close();
+        await testcafe.close();
     }
 
     async runStage (stageName) {
@@ -42,48 +44,29 @@ class User {
     }
 }
 
-const scenarios = new Map();
+function createUser (name, fileName, browser) {
+    const user = new User(name, fileName, browser);
 
-class Scenario {
-    constructor(description) {
-        scenarios.set(description, this);
+    users.set(name, user);
 
-        this.users = new Map();
-    }
+    return user.promiseOfInit;
+}
 
-    createUser (name, fileName, browser) {
-        const user = new User(name, fileName, browser);
+function initUser(name) {
+    const user = users.get(name);
 
-        this.users.set(name, user);
+    if (!user)
+        throw new Error(`The user named '${name}' does not exist`);
 
-        return user.promiseOfInit;
-    }
+    return function stage (stageName) {
+        user.confirmCurrentStep(user);
 
-    initUser(name) {
-        const user = this.users.get(name);
-    
-        if (!user)
-            throw new Error(`The user named '${name}' does not exist`);
-    
-        return function stage (stageName) {
-            user.confirmCurrentStep(user);
-    
-            user.expectedStageName = stageName;
-    
-            return new Promise(resolve => {
-                user.runExpectedStage = resolve;
-            });
-        }
+        user.expectedStageName = stageName;
+
+        return new Promise(resolve => {
+            user.runExpectedStage = resolve;
+        });
     }
 }
 
-function getScenario (description) {
-    const scenario = scenarios.get(description);
-    
-    if (scenario)
-        return scenario;
-
-    throw new Error(`The scenario '${description}' does not exist`)
-}
-
-module.exports = { Scenario, getScenario };
+module.exports = { createUser, initUser };
