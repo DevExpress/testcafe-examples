@@ -1,11 +1,11 @@
 const { Selector } = require('testcafe');
 
-const { getScenario } = require('./scenario');
+const { getScenario } = require('..');
 
 const scenario = getScenario('An example of synchronizing multiple tests');
-const stage    = scenario.initUser('First user');
+const stage    = scenario.initUser('Second user');
 
-fixture`First fixture`
+fixture`Second fixture`
     .page('http://localhost:3000');
 
 const input = Selector('input');
@@ -24,7 +24,7 @@ test('test', async t => {
 
     await stage('Check result');
 
-    await t.expect(h1.innerText).eql('Ok!');
+    await t.expect(h1.innerText).eql('Not ok!');
 
     await stage('End');
 });
