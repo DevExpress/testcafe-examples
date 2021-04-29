@@ -1,5 +1,6 @@
 const createTestCafe = require('testcafe');
 
+
 class User {
     constructor (name, fileName, browser) {
         this.name     = name;
