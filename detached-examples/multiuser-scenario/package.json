@@ -1,19 +1,16 @@
 {
-  "name": "sync-multi-tests",
+  "name": "testcafe-multiuser-scenario",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "node test/index.js"
+    "test": "node test"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "testcafe": "^1.14.0"
   },
-  "devDependencies": {
-    "testcafe": "^1.14.0",
-    "ws": "^7.4.5"
-  }
+  "devDependencies": {}
 }
