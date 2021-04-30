@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button id="target">Target button</button>
+        <label>Seconds pressed: </label>
+        <span id="timer">0</span>
+    </div>
+</body>
+
+<script>
+    const btn   = document.getElementById('target');
+    const timer = document.getElementById('timer');
+
+    btn.onmousedown = () => {
+        window.mouseDownTimer = setInterval(() => {
+            timer.textContent = +timer.textContent + 1
+        }, 1000)
+    }
+
+    btn.onmouseup = () => {
+        window.clearInterval(window.mouseDownTimer);
+    }
+</script>
+
+</html>

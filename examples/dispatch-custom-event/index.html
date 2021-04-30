@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="target">Waiting for an event...</p>
+    <p> Event type: <span id="eventType"></span></p>
+    <p>Is cancelable: <span id="isCancelable"></span></p>
+    <p>Bubbles: <span id="isBubbling"></span></p>
+</body>
+
+<script>
+    const target       = document.getElementById('target');
+    const eventType    = document.getElementById('eventType');
+    const isCancelable = document.getElementById('isCancelable');
+    const isBubbling   = document.getElementById('isBubbling');
+
+    window.addEventListener('touchstart', e => {
+        target.innerText       = 'Event triggered!';
+        eventType.innerText    = Object.getPrototypeOf(e)[Symbol.toStringTag];
+        isCancelable.innerText = !!e.cancelable;
+        isBubbling.innerText   = !!e.bubbles;
+    });
+
+    const event = new TouchEvent('touchstart');
+    
+    window.dispatchEvent(event);
+</script>
+
+</html>
