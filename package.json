@@ -10,7 +10,7 @@
   "dependencies": {
     "lodash": "^4.17.19",
     "nanoid": "^3.1.12",
-    "testcafe": "^1.8.8"
+    "testcafe": "1.15.0-alpha.1"
   },
   "scripts": {
     "examples": "testcafe chrome examples -a \"node server/index.js\"",
@@ -20,8 +20,8 @@
     "lint:fix": "eslint --fix examples/**/*.js detached-examples/**/*.js"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
     "delay": "^5.0.0",
+    "eslint": "^6.8.0",
     "mockdate": "^2.0.5",
     "multiparty": "^4.2.2"
   }
