@@ -8,12 +8,12 @@ export class MyRequestHook extends RequestHook {
         super(requestFilterRules, responseEventConfigureOpts);
     }
     async onRequest (event) {
-        event.requestOptions.headers['Referer'] =
+        event.requestOptions.headers['referer'] =
             'http://my-modified-referer.com';
     }
 
     async onResponse () {
-        
+
     }
 }
 
@@ -30,5 +30,5 @@ test
         await t
             .navigateTo('https://devexpress.github.io/testcafe/example/')
             .expect(logger.contains(r => r.request.url === 'https://devexpress.github.io/testcafe/example/')).ok()
-            .expect(logger.requests[0].request.headers['Referer']).eql('http://my-modified-referer.com');
+            .expect(logger.requests[0].request.headers['referer']).eql('http://my-modified-referer.com');
     });
