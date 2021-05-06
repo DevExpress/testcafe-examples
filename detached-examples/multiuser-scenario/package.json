@@ -1,0 +1,16 @@
+{
+  "name": "testcafe-multiuser-scenario",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "testcafe": "^1.14.0"
+  },
+  "devDependencies": {}
+}
