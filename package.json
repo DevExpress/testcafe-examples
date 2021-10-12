@@ -10,12 +10,13 @@
   "dependencies": {
     "lodash": "^4.17.19",
     "nanoid": "^3.1.12",
-    "testcafe": "1.15.0-alpha.1"
+    "testcafe": "^1.16.1"
   },
   "scripts": {
     "examples": "testcafe chrome examples -a \"node server/index.js\"",
     "mock-camera-microphone-access": " testcafe --hostname localhost \"chrome --use-fake-ui-for-media-stream --use-fake-device-for-media-stream\" detached-examples/mock-camera-microphone-access/mock-camera-microphone-access.js",
-    "test": "npm run lint & npm run examples && npm run mock-camera-microphone-access",
+    "extended-error-tracking": "testcafe --skip-js-errors chrome detached-examples/extended-error-tracking/index.js",
+    "test": "npm run lint & npm run examples && npm run mock-camera-microphone-access && extended-error-tracking",
     "lint": "eslint examples/**/*.js detached-examples/**/*.js",
     "lint:fix": "eslint --fix examples/**/*.js detached-examples/**/*.js"
   },
