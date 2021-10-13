@@ -1,11 +1,13 @@
+const path = require('path');
+
 const { Scenario } = require('..');
 
 module.exports = async () => {
     const scenario = new Scenario('An example of synchronizing multiple tests');
 
     const [user1, user2] = await Promise.all([
-        scenario.createUser('First user', 'test/first-user-test.js', 'chrome'),
-        scenario.createUser('Second user', 'test/second-user-test.js', 'chrome --incognito')
+        scenario.createUser('First user', path.join(__dirname, 'first-user-test.js'), 'chrome'),
+        scenario.createUser('Second user', path.join(__dirname, 'second-user-test.js'), 'chrome --incognito')
     ]);
 
     await Promise.all([
