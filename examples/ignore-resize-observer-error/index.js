@@ -14,7 +14,7 @@ const errorHandler = () => {
     });
 };
 
-fixture('Ignore resize observer')
+fixture("Ignore 'ResizeObserver' error")
     .page('./index.html')
     .clientScripts({ content: `(${errorHandler.toString()})()` });
 
