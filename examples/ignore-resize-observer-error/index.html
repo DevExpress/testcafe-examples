@@ -5,24 +5,24 @@
     <title>Resize observer title test</title>
 </head>
 <body>
-<div>
-    <h1>Resize observer test</h1>
+<div id="container">
+    <p id="text">Resize observer test</p>
     <form>
-        <div><label>Observer enabled:</label><input type="checkbox" checked></div>
-        <div><label>Adjust width:</label><input type="range" value="600" min="300" max="1300"></div>
+        <div><label>Observer enabled:</label><input id="slider" type="checkbox" checked></div>
+        <div><label>Adjust width:</label><input id="isAdjust" type="range" value="600" min="300" max="1300"></div>
     </form>
 </div>
 <script>
     if (window.ResizeObserver) {
-        const h1Elem   = document.querySelector('h1');
-        const divElem  = document.querySelector('body > div');
-        const slider   = document.querySelector('input[type="range"]');
-        const checkbox = document.querySelector('input[type="checkbox"]');
+        const text      = document.querySelector('#text');
+        const container = document.querySelector('#container');
+        const slider    = document.querySelector('#slider');
+        const isAdjust  = document.querySelector('#isAdjust');
 
-        divElem.style.width = '600px';
+        container.style.width = '600px';
 
         slider.addEventListener('input', () => {
-            divElem.style.width = slider.value + 'px';
+            container.style.width = slider.value + 'px';
         });
 
         const resizeObserver = new ResizeObserver(entries => {
@@ -30,23 +30,23 @@
                 if (entry.contentBoxSize) {
                     // Checking for chrome as using a non-standard array
                     if (entry.contentBoxSize[0])
-                        h1Elem.style.fontSize = Math.max(1.5, entry.contentBoxSize[0].inlineSize / 200) + 'rem';
+                        text.style.fontSize = Math.max(1.5, entry.contentBoxSize[0].inlineSize / 200) + 'rem';
                     else
-                        h1Elem.style.fontSize = Math.max(1.5, entry.contentBoxSize.inlineSize / 200) + 'rem';
+                        text.style.fontSize = Math.max(1.5, entry.contentBoxSize.inlineSize / 200) + 'rem';
                 }
                 else
-                    h1Elem.style.fontSize = Math.max(1.5, entry.contentRect.width / 200) + 'rem';
+                    text.style.fontSize = Math.max(1.5, entry.contentRect.width / 200) + 'rem';
             }
         });
 
-        resizeObserver.observe(divElem);
+        resizeObserver.observe(container);
 
-        checkbox.addEventListener('change', () => {
-            if (checkbox.checked) {
-                resizeObserver.observe(divElem);
+        isAdjust.addEventListener('change', () => {
+            if (isAdjust.checked) {
+                resizeObserver.observe(container);
             }
             else {
-                resizeObserver.unobserve(divElem);
+                resizeObserver.unobserve(container);
             }
         });
     }
