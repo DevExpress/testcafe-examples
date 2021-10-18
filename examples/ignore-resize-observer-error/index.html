@@ -1,114 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>Resize observer text test</title>
-    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=j420pKhXgjeffTmAmIe24U23e972fuzB2uqNVNwdueciRVD28K_vXWEJPkUrorz7Vw9_eA-9L5HnEOV8vrFJHGB9C4bA83dtI2wStYaM-Pvc_ISeb-KNWcpwXKp6dXDO" charset="UTF-8"></script><style>
-      html {
-        height: 100%;
-        font-family: 'helvetica neue', arial, sans-serif;
-      }
-
-      body {
-        height: inherit;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      body > div {
-        background-color: #eee;
-        border: 1px solid #ccc;
-        padding: 20px;
-        width: 50%;
-        min-width: 320px;
-      }
-
-      h1 {
-        margin: 0;
-      }
-
-      p {
-        line-height: 1.5;
-      }
-
-      form {
-        width: 100%;
-      }
-
-      form > div {
-        display: flex;
-      }
-
-      form label {
-        flex: 2;
-      }
-
-      form input {
-        flex: 3;
-      }
-
-      input[type="checkbox"] {
-        height: 2rem;
-      }
-    </style>
-  </head>
-  <body>
-    <div>
-      <h1>So what happened?</h1>
-      <p>And remember, don't do anything that affects anything, unless it turns out you were supposed to, in which case, for the love of God, don't not do it! Ow, my spirit! I don't want to be rescued. You guys aren't Santa! You're not even robots. I've got to find a way to escape the horrible ravages of youth. Suddenly, I'm going to the bathroom like clockwork, every three hours. And those jerks at Social Security stopped sending me checks. Now 'I' have to pay 'them'!</p>
-      <form>
+    <title>Resize observer title test</title>
+</head>
+<body>
+<div>
+    <h1>Resize observer test</h1>
+    <form>
         <div><label>Observer enabled:</label><input type="checkbox" checked></div>
         <div><label>Adjust width:</label><input type="range" value="600" min="300" max="1300"></div>
-      </form>
-    </div>
-    <script>
-      if(window.ResizeObserver) {
-        const h1Elem = document.querySelector('h1');
-        const pElem = document.querySelector('p');
-        const divElem = document.querySelector('body > div');
-        const slider = document.querySelector('input[type="range"]');
+    </form>
+</div>
+<script>
+    if (window.ResizeObserver) {
+        const h1Elem   = document.querySelector('h1');
+        const divElem  = document.querySelector('body > div');
+        const slider   = document.querySelector('input[type="range"]');
         const checkbox = document.querySelector('input[type="checkbox"]');
 
         divElem.style.width = '600px';
 
         slider.addEventListener('input', () => {
-          divElem.style.width = slider.value + 'px';
-        })
+            divElem.style.width = slider.value + 'px';
+        });
 
         const resizeObserver = new ResizeObserver(entries => {
-          for (let entry of entries) {
-            if(entry.contentBoxSize) {
-              // Checking for chrome as using a non-standard array
-              if (entry.contentBoxSize[0]) {
-                h1Elem.style.fontSize = Math.max(1.5, entry.contentBoxSize[0].inlineSize/200) + 'rem';
-                pElem.style.fontSize = Math.max(1, entry.contentBoxSize[0].inlineSize/600) + 'rem';
-              } else {
-                h1Elem.style.fontSize = Math.max(1.5, entry.contentBoxSize.inlineSize/200) + 'rem';
-                pElem.style.fontSize = Math.max(1, entry.contentBoxSize.inlineSize/600) + 'rem';
-              }
-              
-            } else {
-              h1Elem.style.fontSize = Math.max(1.5, entry.contentRect.width/200) + 'rem';
-              pElem.style.fontSize = Math.max(1, entry.contentRect.width/600) + 'rem';
+            for (let entry of entries) {
+                if (entry.contentBoxSize) {
+                    // Checking for chrome as using a non-standard array
+                    if (entry.contentBoxSize[0])
+                        h1Elem.style.fontSize = Math.max(1.5, entry.contentBoxSize[0].inlineSize / 200) + 'rem';
+                    else
+                        h1Elem.style.fontSize = Math.max(1.5, entry.contentBoxSize.inlineSize / 200) + 'rem';
+                }
+                else
+                    h1Elem.style.fontSize = Math.max(1.5, entry.contentRect.width / 200) + 'rem';
             }
-          }
-          console.log('Size changed');
         });
 
         resizeObserver.observe(divElem);
 
         checkbox.addEventListener('change', () => {
-          if(checkbox.checked) {
-            resizeObserver.observe(divElem);
-          } else {
-            resizeObserver.unobserve(divElem);
-          }
+            if (checkbox.checked) {
+                resizeObserver.observe(divElem);
+            }
+            else {
+                resizeObserver.unobserve(divElem);
+            }
         });
-      } else {
+    }
+    else {
         console.log('Resize observer not supported!');
-      }
-    </script>
-  </body>
+    }
+</script>
+</body>
 </html>
