@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Resize observer title test</title>
+</head>
+<body>
+<div id="container">
+    <p id="text">Resize observer test</p>
+    <form>
+        <div><label>Observer enabled:</label><input id="slider" type="checkbox" checked></div>
+        <div><label>Adjust width:</label><input id="isAdjust" type="range" value="600" min="300" max="1300"></div>
+    </form>
+</div>
+<script>
+    if (window.ResizeObserver) {
+        const text      = document.querySelector('#text');
+        const container = document.querySelector('#container');
+        const slider    = document.querySelector('#slider');
+        const isAdjust  = document.querySelector('#isAdjust');
+
+        container.style.width = '600px';
+
+        slider.addEventListener('input', () => {
+            container.style.width = slider.value + 'px';
+        });
+
+        const resizeObserver = new ResizeObserver(entries => {
+            for (let entry of entries) {
+                if (entry.contentBoxSize) {
+                    // Checking for chrome as using a non-standard array
+                    if (entry.contentBoxSize[0])
+                        text.style.fontSize = Math.max(1.5, entry.contentBoxSize[0].inlineSize / 200) + 'rem';
+                    else
+                        text.style.fontSize = Math.max(1.5, entry.contentBoxSize.inlineSize / 200) + 'rem';
+                }
+                else
+                    text.style.fontSize = Math.max(1.5, entry.contentRect.width / 200) + 'rem';
+            }
+        });
+
+        resizeObserver.observe(container);
+
+        isAdjust.addEventListener('change', () => {
+            if (isAdjust.checked) {
+                resizeObserver.observe(container);
+            }
+            else {
+                resizeObserver.unobserve(container);
+            }
+        });
+    }
+    else {
+        console.log('Resize observer not supported!');
+    }
+</script>
+</body>
+</html>
