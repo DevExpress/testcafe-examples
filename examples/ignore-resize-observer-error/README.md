@@ -6,7 +6,7 @@
 
 This example shows how to ignore the '[ResizeObserver](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver) loop limit exceeded' error in a web page with the [injected client script](https://testcafe.io/documentation/402843/guides/advanced-guides/inject-client-scripts).
 
-This error does not relate to TestCafe and means that the ResizeObserver failed to observe size changes in the animation frame.
+This error does not relate to TestCafe and indicates that the ResizeObserver failed to observe size changes in the animation frame.
 
 ## TestCafe API in This Example
 
