@@ -1,6 +1,5 @@
 const createTestCafe = require('testcafe');
 
-
 class User {
     constructor (name, fileName, browser) {
         this.name     = name;
@@ -44,7 +43,7 @@ class User {
     }
 }
 
-const scenarios = new Map();
+global.scenarios = global.scenarios || new Map();
 
 class Scenario {
     constructor (description) {

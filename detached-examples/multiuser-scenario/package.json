@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "testcafe": "^1.14.0"
+    "testcafe": "^1.17.1"
   },
   "devDependencies": {}
 }
