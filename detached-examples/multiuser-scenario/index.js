@@ -47,7 +47,7 @@ global.scenarios = global.scenarios || new Map();
 
 class Scenario {
     constructor (description) {
-        scenarios.set(description, this);
+        global.scenarios.set(description, this);
 
         this.users = new Map();
     }
@@ -62,15 +62,15 @@ class Scenario {
 
     initUser (name) {
         const user = this.users.get(name);
-    
+
         if (!user)
             throw new Error(`The user named '${name}' does not exist`);
-    
+
         return function stage (stageName) {
             user.confirmCurrentStep(user);
-    
+
             user.expectedStageName = stageName;
-    
+
             return new Promise(resolve => {
                 user.runExpectedStage = resolve;
             });
@@ -79,8 +79,8 @@ class Scenario {
 }
 
 function getScenario (description) {
-    const scenario = scenarios.get(description);
-    
+    const scenario = global.scenarios.get(description);
+
     if (scenario)
         return scenario;
 
