@@ -1,4 +1,4 @@
-# Extract Reused Code to Helper Functions
+# Chain helper methods
 
 **Test Code**: [index.js](index.js)
 
