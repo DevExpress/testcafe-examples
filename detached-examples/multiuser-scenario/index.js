@@ -80,7 +80,7 @@ class Scenario {
 
 function getScenario (description) {
     const scenario = global.scenarios.get(description);
-
+    
     if (scenario)
         return scenario;
 

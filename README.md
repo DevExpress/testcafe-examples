@@ -55,6 +55,7 @@ See [Command Line Interface](https://devexpress.github.io/testcafe/documentation
 The repository includes the following examples:
 
 * [Access Element Properties](examples/element-properties)
+* [Chain Helper Methods](examples/chain-helper-methods)
 * [Change Element's Style](examples/change-element-style)
 * [Check If an Image Has Loaded](examples/check-if-image-loaded)
 * [Check the Downloaded File Name and Content](examples/check-downloaded-file-name-and-content)
