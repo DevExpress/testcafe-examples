@@ -17,15 +17,16 @@
     "mock-camera-microphone-access": " testcafe --hostname localhost \"chrome:headless --use-fake-ui-for-media-stream --use-fake-device-for-media-stream\" detached-examples/mock-camera-microphone-access/mock-camera-microphone-access.js",
     "extended-error-tracking": "testcafe --skip-js-errors chrome:headless detached-examples/extended-error-tracking/index.js",
     "multiuser-scenario": "node detached-examples/multiuser-scenario/test",
+    "kerberos-auth": "cd detached-examples/kerberos-auth && npm start",
     "set-window-size-for-all-tests": "testcafe chrome detached-examples/set-window-size-for-all-tests/set-window-size-for-all-tests.js --config-file detached-examples/set-window-size-for-all-tests/.testcaferc.js",
     "test": "npm run lint & npm run examples && npm run multiuser-scenario && npm run mock-camera-microphone-access && npm run extended-error-tracking && npm run set-window-size-for-all-tests",
     "lint": "eslint examples/**/*.js detached-examples/**/*.js",
     "lint:fix": "eslint --fix examples/**/*.js detached-examples/**/*.js"
   },
   "devDependencies": {
-    "express": "^4.17.1",
     "delay": "^5.0.0",
     "eslint": "^6.8.0",
+    "express": "^4.17.1",
     "mockdate": "^2.0.5",
     "multiparty": "^4.2.2"
   }

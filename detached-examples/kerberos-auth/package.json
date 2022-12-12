@@ -1,0 +1,22 @@
+{
+  "name": "kerberos-auth",
+  "version": "1.0.0",
+  "description": "Kerberos authentication with request hooks",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm i && node ."
+  },
+  "author": {
+    "name": "Developer Express Inc.",
+    "url": "https://www.devexpress.com/"
+  },
+  "license": "MIT",
+  "keywords": [
+    "kerberos",
+    "docker",
+    "testcafe"
+  ],
+  "dependencies": {
+    "testcafe": "*"
+  }
+}
