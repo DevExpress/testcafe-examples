@@ -88,4 +88,5 @@ Below are the examples that run in Chrome or Firefox only or require additional 
 * [Extended Client-Side Error Tracking](detached-examples/extended-error-tracking)
 * [Mock Camera/Microphone Access](detached-examples/mock-camera-microphone-access)
 * [Multi-User Tests](detached-examples/multiuser-scenario)
+* [Kerberos authenticate](detached-examples/kerberos-auth)
 
