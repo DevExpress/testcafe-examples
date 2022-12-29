@@ -5,7 +5,7 @@ async function runTests (src) {
 
     const nFailed = await testCafe.createRunner()
         .src(src)
-        .browsers('chrome')
+        .browsers('chrome:headless')
         .run();
 
     await testCafe.close();
