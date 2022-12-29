@@ -1,0 +1,211 @@
+{
+  "fixtures": [
+    {
+      "name": "Raw API",
+      "pageUrl": "https://localhost:3000",
+      "tests": [
+        {
+          "name": "Auth without cert",
+          "commands": [
+            {
+              "selector": {
+                "type": "js-expr",
+                "value": "Selector('a').withText('Log in using client certificate')"
+              },
+              "studio": {
+                "selectors": [
+                  {
+                    "rawSelector": {
+                      "type": "js-expr",
+                      "value": "Selector('a').withText('Log in using client certificate')"
+                    },
+                    "ruleType": "$text$"
+                  },
+                  {
+                    "rawSelector": {
+                      "type": "js-expr",
+                      "value": "Selector('a')"
+                    },
+                    "ruleType": "$dom$"
+                  }
+                ],
+                "useOffsets": false,
+                "offsetX": 90,
+                "offsetY": 10
+              },
+              "options": {},
+              "type": "click",
+              "callsite": "0"
+            },
+            {
+              "type": "assertion",
+              "studio": {
+                "assertionMode": "checkElement",
+                "selectors": [
+                  {
+                    "rawSelector": {
+                      "type": "js-expr",
+                      "value": "Selector('body').innerText"
+                    },
+                    "ruleType": "$tagName$"
+                  }
+                ],
+                "selectorType": "CSS Selector",
+                "selectorPostfix": ".innerText"
+              },
+              "callsite": "1",
+              "assertionType": "contains",
+              "actual": {
+                "type": "js-expr",
+                "value": "Selector('body').innerText"
+              },
+              "options": {},
+              "expected": {
+                "type": "js-expr",
+                "value": "\"Sorry, but you need to provide a client certificate\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Auth as Alice",
+          "commands": [
+            {
+              "type": "execute-async-expression",
+              "studio": {},
+              "callsite": "0",
+              "expression": "const { Auth } = require('./auth.js')\r\n\r\nawait t.addRequestHooks(new Auth('Alice'));"
+            },
+            {
+              "selector": {
+                "type": "js-expr",
+                "value": "Selector('a').withText('Log in using client certificate')"
+              },
+              "studio": {
+                "selectors": [
+                  {
+                    "rawSelector": {
+                      "type": "js-expr",
+                      "value": "Selector('a').withText('Log in using client certificate')"
+                    },
+                    "ruleType": "$text$"
+                  },
+                  {
+                    "rawSelector": {
+                      "type": "js-expr",
+                      "value": "Selector('a')"
+                    },
+                    "ruleType": "$dom$"
+                  }
+                ],
+                "useOffsets": false,
+                "offsetX": 66,
+                "offsetY": 12
+              },
+              "options": {},
+              "type": "click",
+              "callsite": "1"
+            },
+            {
+              "type": "assertion",
+              "studio": {
+                "assertionMode": "checkElement",
+                "selectors": [
+                  {
+                    "rawSelector": {
+                      "type": "js-expr",
+                      "value": "Selector('body').innerText"
+                    },
+                    "ruleType": "$tagName$"
+                  }
+                ],
+                "selectorType": "CSS Selector",
+                "selectorPostfix": ".innerText"
+              },
+              "callsite": "2",
+              "assertionType": "contains",
+              "actual": {
+                "type": "js-expr",
+                "value": "Selector('body').innerText"
+              },
+              "options": {},
+              "expected": {
+                "type": "js-expr",
+                "value": "\"Alice\""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Auth as Bob",
+          "commands": [
+            {
+              "type": "execute-async-expression",
+              "studio": {},
+              "callsite": "0",
+              "expression": "const { Auth } = require('./auth.js')\r\n\r\nawait t.addRequestHooks(new Auth('Bob'));"
+            },
+            {
+              "selector": {
+                "type": "js-expr",
+                "value": "Selector('a').withText('Log in using client certificate')"
+              },
+              "studio": {
+                "selectors": [
+                  {
+                    "rawSelector": {
+                      "type": "js-expr",
+                      "value": "Selector('a').withText('Log in using client certificate')"
+                    },
+                    "ruleType": "$text$"
+                  },
+                  {
+                    "rawSelector": {
+                      "type": "js-expr",
+                      "value": "Selector('a')"
+                    },
+                    "ruleType": "$dom$"
+                  }
+                ],
+                "useOffsets": false,
+                "offsetX": 144,
+                "offsetY": 10
+              },
+              "options": {},
+              "type": "click",
+              "callsite": "1"
+            },
+            {
+              "type": "assertion",
+              "studio": {
+                "assertionMode": "checkElement",
+                "selectors": [
+                  {
+                    "rawSelector": {
+                      "type": "js-expr",
+                      "value": "Selector('body').innerText"
+                    },
+                    "ruleType": "$tagName$"
+                  }
+                ],
+                "selectorType": "CSS Selector",
+                "selectorPostfix": ".innerText"
+              },
+              "callsite": "2",
+              "assertionType": "contains",
+              "actual": {
+                "type": "js-expr",
+                "value": "Selector('body').innerText"
+              },
+              "options": {},
+              "expected": {
+                "type": "js-expr",
+                "value": "\"Bob\""
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

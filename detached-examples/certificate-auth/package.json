@@ -1,0 +1,17 @@
+{
+  "name": "certificate-auth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm i && node ."
+  },
+  "author": {
+    "name": "Developer Express Inc.",
+    "url": "https://www.devexpress.com/"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "testcafe": "*"
+  }
+}
