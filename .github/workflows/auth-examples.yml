@@ -1,4 +1,4 @@
-name: Kerberos Authentication
+name: Authentication
 
 on:
   push:
@@ -20,5 +20,8 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v2
 
-      - name: Run Tests
+      - name: Kerberos auth example
         run: npm run kerberos-auth
+
+      - name: Auth with certificates
+        run: npm run certificate-auth

@@ -18,6 +18,7 @@
     "extended-error-tracking": "testcafe --skip-js-errors chrome:headless detached-examples/extended-error-tracking/index.js",
     "multiuser-scenario": "node detached-examples/multiuser-scenario/test",
     "kerberos-auth": "cd detached-examples/kerberos-auth && npm start",
+    "certificate-auth": "cd detached-examples/certificate-auth && npm start",
     "set-window-size-for-all-tests": "testcafe chrome detached-examples/set-window-size-for-all-tests/set-window-size-for-all-tests.js --config-file detached-examples/set-window-size-for-all-tests/.testcaferc.js",
     "test": "npm run lint & npm run examples && npm run multiuser-scenario && npm run mock-camera-microphone-access && npm run extended-error-tracking && npm run set-window-size-for-all-tests",
     "lint": "eslint examples/**/*.js detached-examples/**/*.js",
