@@ -1,9 +1,13 @@
-This example demonstrates the ability to authenticate using client certificates.
+This example demonstrates the process of certificate-based authentication with TestCafe.
 
-A simple server rises in it, which at the address `https://localhost:3000` will give a page with a link to the authentication page: `https://localhost:3000/authenticate`.
+First, we launch a simple web server available at `https://localhost:3000`. The index page contains a link to the authentication page: `https://localhost:3000/authenticate`.
 
-Having received a request to issue an authentication page, the server will check for the presence of a certificate in the request. Further, there are three possibilities: there is no certificate, the certificate is invalid, and the certificate is valid. In each of these cases, the user will receive a message about the result of the certificate verification.
+When you open the log-in page, the server checks the request for the presence of a valid authentication certificate. When the check is complete, the server displays a message with the verification result. There are three possible outcomes:
 
-The `./auth.js` file defines the `Auth` class, which inherits from `[RequestHook](https://testcafe.io/documentation/402669/reference/test-api/requesthook)`. It adds a certificate from the `./certs` folder to the request.
+1. The request does not include a certificate.
+2. The certificate is present, but invalid.
+3. The certificate is both present and valid. 
 
-In the tests, we hook up `Auth` instances with the `t.addRequestHooks` function.
+The `./auth.js` file defines `Auth` — an extension of the [RequestHook](https://testcafe.io/documentation/402669/reference/test-api/requesthook) class. An `Auth` hook scans the `./certs` folder for certificates, and adds them to the request.
+
+Tests in the example use the `t.addRequestHooks` method to create `Auth` instances.
