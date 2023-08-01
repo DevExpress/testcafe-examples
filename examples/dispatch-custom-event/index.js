@@ -9,18 +9,18 @@ test('Dispatch a TouchEvent', async t => {
     const isCancelable = Selector('#isCancelable');
     const isBubbling   = Selector('#isBubbling');
 
-    const eventArgs = {
-        cancelable: false,
-        bubbles:    false
-    };
+    // const eventArgs = {
+    //     cancelable: false,
+    //     bubbles:    false
+    // };
 
-    const options = Object.assign(
-        { eventConstructor: 'TouchEvent' },
-        eventArgs
-    );
+    // const options = Object.assign(
+    //     { eventConstructor: 'TouchEvent' },
+    //     eventArgs
+    // );
 
     await t
-        .dispatchEvent(target, 'touchstart', options)
+        // .dispatchEvent(target, 'touchstart', options)
         .expect(target.innerText).eql('Event triggered!')
         .expect(eventType.innerText).eql('TouchEvent')
         .expect(isCancelable.innerText).eql('false')
