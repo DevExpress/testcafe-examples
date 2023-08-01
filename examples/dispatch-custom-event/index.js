@@ -1,8 +1,7 @@
 import { Selector } from 'testcafe';
 
 fixture`Dispatch Events`
-    .page('./index.html')
-    .skipJsErrors();
+    .page('./index.html');
 
 test('Dispatch a TouchEvent', async t => {
     const target       = Selector('#target');
