@@ -16,21 +16,21 @@
 </body>
 
 <script>
-    const target       = document.getElementById('target');
-    const eventType    = document.getElementById('eventType');
-    const isCancelable = document.getElementById('isCancelable');
-    const isBubbling   = document.getElementById('isBubbling');
+    // const target       = document.getElementById('target');
+    // const eventType    = document.getElementById('eventType');
+    // const isCancelable = document.getElementById('isCancelable');
+    // const isBubbling   = document.getElementById('isBubbling');
 
-    window.addEventListener('touchstart', e => {
-        target.innerText       = 'Event triggered!';
-        // eventType.innerText    = Object.getPrototypeOf(e)[Symbol.toStringTag];
-        // isCancelable.innerText = !!e.cancelable;
-        // isBubbling.innerText   = !!e.bubbles;
-    });
+    // window.addEventListener('touchstart', e => {
+    //     target.innerText       = 'Event triggered!';
+    //     eventType.innerText    = Object.getPrototypeOf(e)[Symbol.toStringTag];
+    //     isCancelable.innerText = !!e.cancelable;
+    //     isBubbling.innerText   = !!e.bubbles;
+    // });
 
-    const event = new TouchEvent('touchstart');
+    // const event = new TouchEvent('touchstart');
     
-    window.dispatchEvent(event);
+    // window.dispatchEvent(event);
 </script>
 
 </html>
