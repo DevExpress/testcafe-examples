@@ -6,7 +6,9 @@ async function runTests (src) {
     const nFailed = await testCafe.createRunner()
         .src(src)
         .browsers('chrome:headless')
-        .run();
+        .run({
+            disableNativeAutomation: true,
+        });
 
     await testCafe.close();
 
