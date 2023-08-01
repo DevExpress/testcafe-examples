@@ -2,4 +2,5 @@
 .idea
 .vscode
 yarn.lock
+package-lock.json
 .npmrc
