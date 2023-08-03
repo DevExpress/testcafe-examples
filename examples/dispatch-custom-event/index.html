@@ -23,18 +23,16 @@
     const isBubbling   = document.querySelector('#isBubbling');
     const btn          = document.querySelector('#btn');
 
-    window.addEventListener('touchstart', e => {
+    document.addEventListener('touchstart', e => {
         target.innerText       = 'Event triggered!';
         eventType.innerText    = Object.getPrototypeOf(e)[Symbol.toStringTag];
         isCancelable.innerText = !!e.cancelable;
         isBubbling.innerText   = !!e.bubbles;
     });
 
-    btn.addEventListener('click', e => {
-      const event = new TouchEvent('touchstart');
-      
-      window.dispatchEvent(event);
-    })
+    const event = new TouchEvent('touchstart');
+    
+    document.dispatchEvent(event);
 </script>
 
 </html>

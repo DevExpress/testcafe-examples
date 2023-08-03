@@ -20,7 +20,6 @@ test('Dispatch a TouchEvent', async t => {
     );
 
     await t
-        .click('#btn')
         .dispatchEvent(target, 'touchstart', options)
         .expect(target.innerText).eql('Event triggered!')
         .expect(eventType.innerText).eql('TouchEvent')
