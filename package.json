@@ -13,7 +13,7 @@
     "testcafe": "^3.1.0"
   },
   "scripts": {
-    "examples": "testcafe chrome:headless examples -a \"node server/index.js\"",
+    "examples": "testcafe chrome:headless examples -a \"node server/index.js\" --disable-native-automation",
     "mock-camera-microphone-access": " testcafe --hostname localhost \"chrome:headless --use-fake-ui-for-media-stream --use-fake-device-for-media-stream\" detached-examples/mock-camera-microphone-access/mock-camera-microphone-access.js",
     "extended-error-tracking": "testcafe --skip-js-errors chrome:headless detached-examples/extended-error-tracking/index.js",
     "multiuser-scenario": "node detached-examples/multiuser-scenario/test",
