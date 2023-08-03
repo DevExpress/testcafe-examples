@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <button id="btn">Dispatch event</button>
     <p id="target">Waiting for an event...</p>
     <p> Event type: <span id="eventType"></span></p>
     <p>Is cancelable: <span id="isCancelable"></span></p>
@@ -21,7 +20,6 @@
     const eventType    = document.querySelector('#eventType');
     const isCancelable = document.querySelector('#isCancelable');
     const isBubbling   = document.querySelector('#isBubbling');
-    const btn          = document.querySelector('#btn');
 
     document.addEventListener('touchstart', e => {
         target.innerText       = 'Event triggered!';
