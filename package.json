@@ -10,7 +10,7 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "nanoid": "^3.1.12",
-    "testcafe": "3.0.1"
+    "testcafe": "^3.1.0"
   },
   "scripts": {
     "examples": "testcafe chrome:headless examples -a \"node server/index.js\"",
