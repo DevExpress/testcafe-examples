@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <button id="btn">Dispatch event</button>
     <p id="target">Waiting for an event...</p>
     <p> Event type: <span id="eventType"></span></p>
     <p>Is cancelable: <span id="isCancelable"></span></p>
@@ -16,10 +17,11 @@
 </body>
 
 <script>
-    const target       = document.getElementById('target');
-    const eventType    = document.getElementById('eventType');
-    const isCancelable = document.getElementById('isCancelable');
-    const isBubbling   = document.getElementById('isBubbling');
+    const target       = document.querySelector('#target');
+    const eventType    = document.querySelector('#eventType');
+    const isCancelable = document.querySelector('#isCancelable');
+    const isBubbling   = document.querySelector('#isBubbling');
+    const btn          = document.querySelector('#btn');
 
     window.addEventListener('touchstart', e => {
         target.innerText       = 'Event triggered!';
@@ -28,9 +30,11 @@
         isBubbling.innerText   = !!e.bubbles;
     });
 
-    const event = new TouchEvent('touchstart');
-    
-    window.dispatchEvent(event);
+    btn.addEventListener('click', e => {
+      const event = new TouchEvent('touchstart');
+      
+      window.dispatchEvent(event);
+    })
 </script>
 
 </html>
