@@ -8,9 +8,9 @@
   "description": "This repository contains sample test files that help you learn how to use TestCafe.",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "nanoid": "^3.1.12",
-    "testcafe": "2.1.0"
+    "testcafe": "^3.1.0"
   },
   "scripts": {
     "examples": "testcafe chrome:headless examples -a \"node server/index.js\"",
@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "delay": "^5.0.0",
-    "eslint": "^6.8.0",
+    "eslint": "^8.46.0",
     "express": "^4.17.1",
     "mockdate": "^2.0.5",
     "multiparty": "^4.2.2"
