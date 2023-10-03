@@ -37,7 +37,7 @@ You can use TestCafe [CLI options](https://devexpress.github.io/testcafe/documen
 To run tests in Chrome only, execute the following command:
 
 ```sh
-npx testcafe chrome examples
+npx testcafe chrome examples -a node server/index.js
 ```
 
 The following command runs the examples from the `client-scripts` directory:
