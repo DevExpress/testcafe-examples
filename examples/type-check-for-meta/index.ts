@@ -25,8 +25,8 @@ test
 test
     .meta<MetaOptions>({ device: 'desktop', skip: false })
     ('test with meta device: desktop and skip: false', async t => {
-    await t.wait(1000);
-});
+        await t.wait(1000);
+    });
 
 test
     .meta<MetaOptions>({ device: 'tablet', skip: false })
