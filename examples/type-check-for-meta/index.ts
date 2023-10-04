@@ -19,17 +19,17 @@ fixture `Fixture with meta device: desktop`
 test
     .meta({ device: 'mobile', skip: false })
     ('test with meta device: mobile and skip: false', async t => {
-    await t.wait(1000);
-});
+        await t.wait(1000);
+    });
 
 test
     .meta<MetaOptions>({ device: 'desktop', skip: false })
     ('test with meta device: desktop and skip: false', async t => {
-    await t.wait(1000);
-});
+        await t.wait(1000);
+    });
 
 test
     .meta<MetaOptions>({ device: 'tablet', skip: false })
     ('test with meta device: tablet and skip: false', async t => {
-    await t.wait(1000);
-});
+        await t.wait(1000);
+    });
