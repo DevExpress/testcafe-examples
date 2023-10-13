@@ -12,13 +12,9 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Setup Node
-        uses: actions/setup-node@v2
+      - uses: DevExpress/testcafe-build-system/actions/prepare@main
         with:
           node-version: '16'
-
-      - name: Check out the repository
-        uses: actions/checkout@v2
 
       - name: Kerberos auth example
         run: npm run kerberos-auth
