@@ -10,12 +10,12 @@ function validateMeta (excludeMeta, meta) {
 module.exports = {
     filter: (testName, fixtureName, fixturePath, testMeta, fixtureMeta) => {
         const excludeFixtureMeta = {
-            device: 'mobile',
-            skip: true,
+            severity: 'low',
+            repeatDaily: false,
         }
 
         const excludeTestMeta = {
-            device: 'desktop',
+            device: 'mobile',
             skip: true,
         }
         
