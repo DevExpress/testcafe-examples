@@ -1,5 +1,4 @@
-import { Selector } from 'testcafe';
-import './custom-typing'
+import './custom-typing';
 
 fixture `Fixture with meta device: desktop`
     .meta({ device: 'desktop' })
