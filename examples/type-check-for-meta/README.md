@@ -30,7 +30,7 @@ You can restrict the range of acceptable values or value types for your test met
     import './custom-typing';
     ```
 
-When TestCafe compiles the `index.ts` test, it checks `t.meta` options against the list of known keys and values.
+When TestCafe compiles the `index.ts` test, it checks `test.meta` parameters against the list of known keys and values.
 
 The compilation fails if your test metadata includes an unknown key or an unacceptable value:
 
