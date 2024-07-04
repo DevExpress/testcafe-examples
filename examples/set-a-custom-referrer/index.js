@@ -27,9 +27,7 @@ const logger = RequestLogger(
 
 test
     .requestHooks([hook, logger])('Check the Referer Value', async t => {
-        await t
-            .navigateTo('https://devexpress.github.io/testcafe/example/')
-            .expect(logger.contains(r => r.request.url === 'https://devexpress.github.io/testcafe/example/')).ok();
-
+        await t.navigateTo('https://devexpress.github.io/testcafe/example/');
+        await t.expect(logger.contains(r => r.request.url === 'https://devexpress.github.io/testcafe/example/')).ok();
         await t.expect(logger.requests[0].request.headers['referer']).eql('http://my-modified-referer.com');
     });
