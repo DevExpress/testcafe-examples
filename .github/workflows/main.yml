@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: DevExpress/testcafe-build-system/actions/prepare@main
         with:
-          node-version: 'latest'
+          node-version: '22'
       - run: node -v
       - name: Npm install
         run: npm install
