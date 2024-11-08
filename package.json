@@ -10,7 +10,7 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "nanoid": "^3.1.12",
-    "testcafe": "^3.6.2"
+    "testcafe": "^3.7.0"
   },
   "scripts": {
     "examples": "testcafe chrome:headless examples -a \"node server/index.js\"",
@@ -27,7 +27,7 @@
   "devDependencies": {
     "delay": "^5.0.0",
     "eslint": "^8.46.0",
-    "express": "^4.21.0",
+    "express": "^4.21.1",
     "mockdate": "^2.0.5",
     "multiparty": "^4.2.2"
   }
