@@ -8,7 +8,7 @@
   "description": "This repository contains sample test files that help you learn how to use TestCafe.",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.23",
     "nanoid": "^3.3.8",
     "testcafe": "^3.7.0"
   },
