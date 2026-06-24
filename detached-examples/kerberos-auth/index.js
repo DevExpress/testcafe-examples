@@ -27,7 +27,7 @@ function startServer () {
     execSync('docker cp server/index.js server:home/server/index.js');
     execSync('docker cp server/package.json server:home/server/package.json');
     execSync('docker cp server/package-lock.json server:home/server/package-lock.json');
-    
+
     execSync('docker exec server sh -c "cd /home/server && npm ci"');
     execSync('docker exec -d server node /home/server');
 }
